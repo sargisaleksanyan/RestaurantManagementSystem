@@ -1,12 +1,16 @@
 package Restaurant;
 
-import java.awt.*;
+import Customer.CustomerWindow;
+import meal_menu.MenuWindow;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Restaurant extends JFrame {
+public class Restaurant extends JFrame implements ActionListener {
    
-	private final String name="Martuni Mot";
+	private final String name="Armenian Food";
 	private JButton menu ;
 	private JButton customer ;
 	private JButton order;
@@ -32,21 +36,36 @@ public class Restaurant extends JFrame {
 		menu    =new JButton("Menu");
 		menu.setPreferredSize(new Dimension(150,40));
 		customer=new JButton("Customers");
+
 		customer.setPreferredSize(new Dimension(150,40));
 		order   =new JButton("Orders");
 	    order.setPreferredSize(new Dimension(150,40));
 		item    =new JButton("Items");
 		item.setPreferredSize(new Dimension(150,40));
 		menuPanel=new JPanel();
-		menuPanel.setLayout(new GridLayout(2,2));
+		menuPanel.setLayout(new GridLayout(4,1));
 		menuPanel.add(menu);
 		menuPanel.add(customer);
 		menuPanel.add(order);
 		menuPanel.add(item);
 		add(menuPanel);
+		customer.addActionListener(this);
+		menu.addActionListener(this);
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
            new Restaurant();
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		 if(e.getSource().equals(menu))
+		 {
+			MenuWindow m=new MenuWindow();
+		 }
+		else if(e.getSource().equals(customer))
+		{
+			CustomerWindow c=new CustomerWindow ();
+		}
 	}
 }
