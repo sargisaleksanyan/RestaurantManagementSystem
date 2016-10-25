@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.*;
 
 public class Restaurant extends JFrame implements ActionListener {
    
@@ -55,6 +56,22 @@ public class Restaurant extends JFrame implements ActionListener {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
            new Restaurant();
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection mycon= DriverManager.getConnection("jdbc:mysql://95.140.195.69:3306/A09155126","A09155126","A09155126");
+			Statement myStmt=mycon.createStatement();
+			ResultSet myRs=myStmt.executeQuery("select * from Product where productTitle='Rice'");
+			while(myRs.next())
+			{
+				System.out.println(myRs.getString("productTitle")+myRs.getString("sellPrice"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}//'A09155126@37.157.220.18'
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override

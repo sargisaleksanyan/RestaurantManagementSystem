@@ -1,7 +1,5 @@
 package meal_menu;
 
-import Restaurant.Restaurant;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -46,9 +44,11 @@ public class MenuWindow extends JFrame {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         // TODO Auto-generated method stub
-        new Restaurant();
+        new MenuWindow();
+
     }
 
 }
