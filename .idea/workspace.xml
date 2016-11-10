@@ -2,18 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d93fe768-fd89-49e0-90b5-433b3a294441" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_3_1_14_bin.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/meal_menu/ItemWindow.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DataBaseManagment/CustomerDB.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_3_1_14_bin.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RestaurantManagementSystem/Customer/CustomerWindow.class" afterPath="$PROJECT_DIR$/out/production/RestaurantManagementSystem/Customer/CustomerWindow.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RestaurantManagementSystem/Order/History.class" afterPath="$PROJECT_DIR$/out/production/RestaurantManagementSystem/Order/History.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RestaurantManagementSystem/Restaurant/Restaurant.class" afterPath="$PROJECT_DIR$/out/production/RestaurantManagementSystem/Restaurant/Restaurant.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RestaurantManagementSystem/meal_menu/MenuWindow.class" afterPath="$PROJECT_DIR$/out/production/RestaurantManagementSystem/meal_menu/MenuWindow.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RestaurantManagementSystem/meal_menu/ItemWindow.class" afterPath="$PROJECT_DIR$/out/production/RestaurantManagementSystem/meal_menu/ItemWindow.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/src.xml" afterPath="$PROJECT_DIR$/.idea/libraries/src.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RestaurantManagementSystem.iml" afterPath="$PROJECT_DIR$/RestaurantManagementSystem.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Customer/CustomerWindow.java" afterPath="$PROJECT_DIR$/src/Customer/CustomerWindow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Order/History.java" afterPath="$PROJECT_DIR$/src/Order/History.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Restaurant/Restaurant.java" afterPath="$PROJECT_DIR$/src/Restaurant/Restaurant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/meal_menu/MenuWindow.java" afterPath="$PROJECT_DIR$/src/meal_menu/MenuWindow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/meal_menu/ItemWindow.java" afterPath="$PROJECT_DIR$/src/meal_menu/ItemWindow.java" />
     </list>
     <ignored path="RestaurantManagementSystem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,15 +42,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Restaurant.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Restaurant/Restaurant.java">
+      <file leaf-file-name="Customer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Customer/Customer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="87" column="1" selection-start-line="87" selection-start-column="1" selection-end-line="87" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1477425657293" expanded="true" signature="1828:1875" ph=" SELECT statement (PRODUCT)" />
-              </folding>
+            <state relative-caret-position="-217">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -55,41 +55,24 @@
       <file leaf-file-name="CustomerWindow.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Customer/CustomerWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="98" column="85" selection-start-line="98" selection-start-column="85" selection-end-line="98" selection-end-column="85" />
+            <state relative-caret-position="182">
+              <caret line="162" column="31" selection-start-line="162" selection-start-column="31" selection-end-line="162" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1477436357920" expanded="true" signature="2952:2991" ph=" SELECT statement (CUSTOMER)" />
-                <marker date="1477436357920" expanded="true" signature="2952:2995" ph=" SELECT statement (CUSTOMER)" />
-                <marker date="1477436357920" expanded="true" signature="2952:3001" ph=" SELECT statement (CUSTOMER)" />
-                <marker date="1477436357920" expanded="true" signature="2952:3043" ph=" SELECT statement (CUSTOMER)" />
-                <marker date="1477436357920" expanded="true" signature="2952:3047" ph=" SELECT statement (CUSTOMER)" />
-                <marker date="1477436357920" expanded="true" signature="2952:3059" ph=" SELECT statement (CUSTOMER)" />
-                <marker date="1477436357920" expanded="true" signature="2952:3068" ph=" SELECT statement (CUSTOMER)" />
-                <marker date="1477436357920" expanded="true" signature="2952:3072" ph=" SELECT statement (CUSTOMER)" />
-                <marker date="1477436357920" expanded="true" signature="3923:4005" ph=" INSERT statement (CUSTOMER)" />
-                <marker date="1477436357920" expanded="true" signature="4047:4181" ph=" INSERT statement (CUSTOMER)" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ItemWindow.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/meal_menu/ItemWindow.java">
+      <file leaf-file-name="CustomerDB.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DataBaseManagment/CustomerDB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Customer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Customer/Customer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-116">
-              <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-              <folding />
+            <state relative-caret-position="324">
+              <caret line="66" column="20" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
+              <folding>
+                <marker date="1478790271942" expanded="true" signature="799:838" ph=" SELECT statement (CUSTOMER)" />
+                <marker date="1478790271942" expanded="true" signature="1334:1471" ph=" INSERT statement (CUSTOMER)" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -115,11 +98,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Order/Order.java" />
-        <option value="$PROJECT_DIR$/src/Order/History.java" />
         <option value="$PROJECT_DIR$/src/Customer/Customer.java" />
         <option value="$PROJECT_DIR$/src/meal_menu/MenuWindow.java" />
-        <option value="$PROJECT_DIR$/src/Restaurant/Restaurant.java" />
         <option value="$PROJECT_DIR$/src/meal_menu/ItemWindow.java" />
+        <option value="$PROJECT_DIR$/src/Order/History.java" />
+        <option value="$PROJECT_DIR$/src/Restaurant/Restaurant.java" />
+        <option value="$PROJECT_DIR$/src/DataBaseManagment/CustomerDataBase.java" />
+        <option value="$PROJECT_DIR$/src/DataBaseManagment/CustomerDB.java" />
         <option value="$PROJECT_DIR$/src/Customer/CustomerWindow.java" />
       </list>
     </option>
@@ -165,8 +150,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -199,49 +182,17 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Restaurant" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RestaurantManagementSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RestaurantManagementSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RestaurantManagementSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RestaurantManagementSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Customer" />
+              <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Project Files" />
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -250,7 +201,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mysql-connector-java-3.1.14-bin.jar!/" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mysql-connector-java-3.1.14/mysql-connector-java-3.1.14-bin.jar!/" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
@@ -558,7 +509,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.49721116" order="6" side_tool="false" content_ui="tabs" />
@@ -567,26 +518,26 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3003096" sideWeight="0.14501992" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08446215" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3003096" sideWeight="0.85498005" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27708977" sideWeight="0.21832669" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07330678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27708977" sideWeight="0.7816733" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.49721116" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.49402392" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1187251" sideWeight="0.49115044" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1625498" sideWeight="0.48230088" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3978328" sideWeight="0.49402392" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1187251" sideWeight="0.50884956" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34520122" sideWeight="0.69800794" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1187251" sideWeight="0.5176991" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15219063" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -620,21 +571,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Customer/CustomerWindow.java</url>
-          <line>140</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Customer/CustomerWindow.java</url>
-          <line>144</line>
-          <properties />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="12" />
+      <option name="time" value="28" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -647,10 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
           <caret line="72" column="25" selection-start-line="58" selection-start-column="4" selection-end-line="73" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1477425657293" expanded="true" signature="1828:1875" ph=" SELECT statement (PRODUCT)" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -660,16 +593,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1477436357920" expanded="true" signature="2952:2991" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:2995" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3001" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3043" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3047" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3059" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3068" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3072" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="3923:4005" ph=" INSERT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="4047:4181" ph=" INSERT statement (CUSTOMER)" />
           </folding>
         </state>
       </provider>
@@ -678,7 +601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -686,7 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -694,10 +615,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="28" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1477425657293" expanded="true" signature="1828:1875" ph=" SELECT statement (PRODUCT)" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -705,9 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -717,16 +631,6 @@
           <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1477436357920" expanded="true" signature="2952:2991" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:2995" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3001" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3043" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3047" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3059" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3068" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3072" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="3923:4005" ph=" INSERT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="4047:4181" ph=" INSERT statement (CUSTOMER)" />
           </folding>
         </state>
       </provider>
@@ -735,10 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="28" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1477425657293" expanded="true" signature="1828:1875" ph=" SELECT statement (PRODUCT)" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -746,9 +646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -758,16 +655,6 @@
           <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1477436357920" expanded="true" signature="2952:2991" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:2995" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3001" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3043" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3047" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3059" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3068" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3072" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="3923:4005" ph=" INSERT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="4047:4181" ph=" INSERT statement (CUSTOMER)" />
           </folding>
         </state>
       </provider>
@@ -776,10 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1477425657293" expanded="true" signature="1828:1875" ph=" SELECT statement (PRODUCT)" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -787,10 +670,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="49" column="23" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1477425657293" expanded="true" signature="1828:1875" ph=" SELECT statement (PRODUCT)" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -807,16 +686,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1477436357920" expanded="true" signature="2952:2991" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:2995" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3001" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3043" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3047" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3059" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3068" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3072" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="3923:4005" ph=" INSERT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="4047:4181" ph=" INSERT statement (CUSTOMER)" />
           </folding>
         </state>
       </provider>
@@ -825,10 +694,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="49" column="23" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1477425657293" expanded="true" signature="1828:1875" ph=" SELECT statement (PRODUCT)" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -845,16 +710,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1477436357920" expanded="true" signature="2952:2991" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:2995" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3001" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3043" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3047" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3059" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3068" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3072" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="3923:4005" ph=" INSERT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="4047:4181" ph=" INSERT statement (CUSTOMER)" />
           </folding>
         </state>
       </provider>
@@ -863,10 +718,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="35" column="53" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1477425657293" expanded="true" signature="1828:1875" ph=" SELECT statement (PRODUCT)" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -883,16 +734,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1477436357920" expanded="true" signature="2952:2991" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:2995" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3001" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3043" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3047" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3059" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3068" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3072" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="3923:4005" ph=" INSERT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="4047:4181" ph=" INSERT statement (CUSTOMER)" />
           </folding>
         </state>
       </provider>
@@ -901,10 +742,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1477425657293" expanded="true" signature="1828:1875" ph=" SELECT statement (PRODUCT)" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -912,41 +749,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="2202" column="16" selection-start-line="2202" selection-start-column="16" selection-end-line="2202" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Order/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Order/History.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Employee/Waiter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Employee/Cook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Employee/Manager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -968,7 +770,49 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12">
           <caret line="263" column="19" selection-start-line="263" selection-start-column="19" selection-end-line="263" selection-end-column="19" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ItemWindow.java" />
+    <entry file="file://$PROJECT_DIR$/src/Employee/Cook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Employee/Manager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Employee/Waiter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/meal_menu/Dish.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/meal_menu/DishBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/meal_menu/Drink.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -979,60 +823,136 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ItemWindow.java" />
-    <entry file="file://$PROJECT_DIR$/src/meal_menu/MenuWindow.java">
+    <entry file="file://$PROJECT_DIR$/src/meal_menu/ItemWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-847">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Customer/Customer.java">
+    <entry file="file://$PROJECT_DIR$/src/meal_menu/MealBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-116">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-          <folding />
+        <state relative-caret-position="30">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/meal_menu/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/meal_menu/MenuWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Restaurant/Restaurant.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="87" column="1" selection-start-line="87" selection-start-column="1" selection-end-line="87" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1477425657293" expanded="true" signature="1828:1875" ph=" SELECT statement (PRODUCT)" />
-          </folding>
+        <state relative-caret-position="195">
+          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/meal_menu/ItemWindow.java">
+    <entry file="file://$PROJECT_DIR$/src/Restaurant/Table.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/meal_menu/Salad.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/meal_menu/SaladBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Order/History.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Order/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PriceStrategy/AmountStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PriceStrategy/PriceStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PriceStrategy/TimeStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Restaurant/Bill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/awt/Frame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="508" column="16" selection-start-line="508" selection-start-column="16" selection-end-line="508" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Customer/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-217">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBaseManagment/CustomerDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="66" column="20" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
+          <folding>
+            <marker date="1478790271942" expanded="true" signature="799:838" ph=" SELECT statement (CUSTOMER)" />
+            <marker date="1478790271942" expanded="true" signature="1334:1471" ph=" INSERT statement (CUSTOMER)" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Customer/CustomerWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="98" column="85" selection-start-line="98" selection-start-column="85" selection-end-line="98" selection-end-column="85" />
+        <state relative-caret-position="182">
+          <caret line="162" column="31" selection-start-line="162" selection-start-column="31" selection-end-line="162" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1477436357920" expanded="true" signature="2952:2991" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:2995" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3001" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3043" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3047" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3059" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3068" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="2952:3072" ph=" SELECT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="3923:4005" ph=" INSERT statement (CUSTOMER)" />
-            <marker date="1477436357920" expanded="true" signature="4047:4181" ph=" INSERT statement (CUSTOMER)" />
           </folding>
         </state>
       </provider>

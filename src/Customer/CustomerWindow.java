@@ -1,14 +1,13 @@
 package Customer;
 
+import DataBaseManagment.CustomerDB;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.*;
 
-/**
- * Created by sargis on 10/16/16.
- */
+
 public class CustomerWindow extends JFrame implements ActionListener{
 
 
@@ -16,11 +15,14 @@ public class CustomerWindow extends JFrame implements ActionListener{
     private JButton findCustomer;
     private JPanel  customerAction;
     private JPanel  registeration;
+    private JPanel mainPanel;
+    private CustomerDB customerDB;
     private JButton action;
-    JTextField name;
-    JTextField lastname;
-    JTextField phone;
-    boolean isAddClicked=false;
+    private JTextField name;
+    private JTextField lastname;
+    private JTextField phone;
+    private boolean isAddClicked=false;
+    JLabel errorMessage;
     public CustomerWindow()
     {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -28,6 +30,12 @@ public class CustomerWindow extends JFrame implements ActionListener{
         int x=dim.width*5/10;
         int y=dim.height*8/10;
         this.setLocation(dim.width/2-x/2, dim.height/2-y/2);
+        mainPanel=new JPanel();
+        customerAction=new JPanel();
+        mainPanel.setLayout(new GridLayout(3,1));
+        mainPanel.add(customerAction);
+        customerDB=new CustomerDB();
+        add(mainPanel);
         dim.setSize(x, y);
         setVisible(true);
         setLayout(new FlowLayout());
@@ -38,18 +46,15 @@ public class CustomerWindow extends JFrame implements ActionListener{
     }
     public void initalButton()
     {
-        customerAction=new JPanel();
-        addCustomer =new JButton("Add a Customer");
+
+        addCustomer =new JButton("Sign Up");
         addCustomer.setPreferredSize(new Dimension(150,40));
-        findCustomer=new JButton("Find Customer");
+        findCustomer=new JButton("Log in");
         findCustomer.setPreferredSize(new Dimension(150,40));
         findCustomer.addActionListener(this);
         customerAction.setLayout(new GridLayout(3,1));
-
-
         customerAction.add(addCustomer);
         customerAction.add(findCustomer);
-        add(customerAction);
         addCustomer.addActionListener(this);
 
     }
@@ -57,15 +62,14 @@ public class CustomerWindow extends JFrame implements ActionListener{
     {
 
         name =new JTextField();
-        name.setPreferredSize(new Dimension(150,20));
+        name.setPreferredSize(new Dimension(100,20));
         lastname =new JTextField();
-        lastname.setPreferredSize(new Dimension(150,20));
-         phone =new JTextField();
-        phone.setPreferredSize(new Dimension(150,20));
-        JLabel nameLabel=new JLabel("FirstName");
-        JLabel lastnameLabel=new JLabel("LastName");
-        JLabel phonelabel=new JLabel("Phone");
-
+        lastname.setPreferredSize(new Dimension(100,20));
+        phone =new JTextField();
+        phone.setPreferredSize(new Dimension(100,20));
+        JLabel nameLabel=new JLabel("FirstName *");
+        JLabel lastnameLabel=new JLabel("LastName *");
+        JLabel phonelabel=new JLabel("Phone *");
         registeration=new JPanel();
         registeration.setLayout(new GridLayout(4,1));
         registeration.add(nameLabel);
@@ -77,56 +81,51 @@ public class CustomerWindow extends JFrame implements ActionListener{
         action=new JButton();
         registeration.add(action);
         action.addActionListener(this);
-        add(registeration);
-
+        mainPanel.add(registeration);
         validate();
     }
+    public void logIn()
+    {
+        if(registeration!=null)
+        {
+            mainPanel.remove(registeration);
+            registeration=null;
+        }
+
+        registeration=new JPanel();
+        name =new JTextField();
+        name.setPreferredSize(new Dimension(100,20));
+        lastname =new JTextField();
+        lastname.setPreferredSize(new Dimension(100,20));
+        phone =new JTextField();
+        phone.setPreferredSize(new Dimension(100,20));
+        JLabel nameLabel=new JLabel("FirstName ");
+        JLabel lastnameLabel=new JLabel("LastName ");
+        JLabel phonelabel=new JLabel("Phone *");
+        registeration=new JPanel();
+        registeration.setLayout(new GridLayout(5,1));
+        registeration.add(nameLabel);
+        registeration.add(name);
+        registeration.add(lastnameLabel);
+        registeration.add(lastname);
+        registeration.add(phonelabel);
+        registeration.add(phone);
+        action=new JButton();
+        action.setText("LogIn");
+        registeration.add(action);
+        action.addActionListener(this);
+        mainPanel.add(registeration);
+
+        validate();
+
+
+    }
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
+
           new CustomerWindow();
     }
-     public void find(String name,String surName,int phone)
-     {
-         try {
-             Class.forName("com.mysql.jdbc.Driver");
-             Connection mycon= DriverManager.getConnection("jdbc:mysql://95.140.195.69:3306/A09155126","A09155126","A09155126");
-             Statement myStmt=mycon.createStatement();
-             ResultSet myRs=myStmt.executeQuery("select * from Customer where firstName="+"'"+name+"'AND " +
-                     "lastName="+"'"+surName+"'AND phone"+"="+phone);
-            // (" + "'" + name + "', '" + surName + "', '" + phone+  "');");
-             while(myRs.next())
-             {
-                 System.out.println(myRs.getString("firstName")+myRs.getString("phone"));
-             }
-         } catch (SQLException e) {
-             // TODO Auto-generated catch block
-             e.printStackTrace();
-         }//'A09155126@37.157.220.18'
-         catch (ClassNotFoundException e) {
-             e.printStackTrace();
-         }
-     }
-     public void addToDb(String name,String surName,int phone)
-     {
 
-         try {
-             Class.forName("com.mysql.jdbc.Driver");
-             Connection mycon= DriverManager.getConnection("jdbc:mysql://95.140.195.69:3306/A09155126","A09155126","A09155126");
-             Statement myStmt=mycon.createStatement();
 
-          //  myStmt.executeUpdate("insert into Customer (firstName,lastName,phone) values(sqlName,sqlLastName,+phone+");");
-             myStmt.executeUpdate("INSERT INTO Customer (firstName,lastName,phone) VALUES ("
-                     + "'" + name + "', '" + surName + "', '" + phone+  "');");
-           //  while(myRs.next())
-
-         } catch (SQLException e) {
-             // TODO Auto-generated catch block
-             e.printStackTrace();
-         }//'A09155126@37.157.220.18'
-         catch (ClassNotFoundException e) {
-             e.printStackTrace();
-         }
-     }
     @Override
     public void actionPerformed(ActionEvent e) {
 
@@ -140,8 +139,9 @@ public class CustomerWindow extends JFrame implements ActionListener{
         }
         else if (e.getSource().equals(findCustomer))
         {
-            initalRegister();
-            action.setText("Find");
+
+
+            logIn();
             validate();
             isAddClicked=false;
         }
@@ -155,17 +155,46 @@ public class CustomerWindow extends JFrame implements ActionListener{
                 name.setText("");
                 lastname.setText("");
                  phone.setText("");
-                addToDb(firstName,surName,number);
+
+             boolean check =customerDB.signUp(firstName,surName,number);
+
+                if(!check)
+                {
+                    errorMessage=new    JLabel();
+                    errorMessage.setText("Phone number already exists");
+                    mainPanel.add(errorMessage);
+                    validate();
+                }
             }
             else
             {
-                String firstName=name.getText().toString();
-                String surName= lastname.getText().toString();
-                int number=Integer.parseInt(phone.getText().toString());
+
+                int number=0;
+                try {
+                   number = Integer.parseInt(phone.getText().toString());
+                }
+                catch (NumberFormatException n)
+                {
+
+                }
                 name.setText("");
                 lastname.setText("");
                 phone.setText("");
-                find(firstName,surName,number);
+                String check=customerDB.customerLogIn(number);
+                if(check!=null)
+               {
+                   mainPanel.remove(registeration);
+                   registeration=null;
+                   this.setTitle(check);
+                   validate();
+               }
+               else
+               {
+                   errorMessage=new    JLabel();
+                   errorMessage.setText("Input is Incorrect");
+                   mainPanel.add(errorMessage);
+                   validate();
+               }
             }
         }
        }

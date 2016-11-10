@@ -1,16 +1,16 @@
 package Restaurant;
 
 import Customer.CustomerWindow;
+import meal_menu.ItemWindow;
 import meal_menu.MenuWindow;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.*;
 
 public class Restaurant extends JFrame implements ActionListener {
-   
+
 	private final String name="Armenian Food";
 	private JButton menu ;
 	private JButton customer ;
@@ -29,7 +29,7 @@ public class Restaurant extends JFrame implements ActionListener {
 		setLayout(new FlowLayout());
 		setSize(dim);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-	    setTitle(name);;
+		setTitle(name);;
 		initButtons();
 	}
 	public void initButtons()
@@ -40,7 +40,7 @@ public class Restaurant extends JFrame implements ActionListener {
 
 		customer.setPreferredSize(new Dimension(150,40));
 		order   =new JButton("Orders");
-	    order.setPreferredSize(new Dimension(150,40));
+		order.setPreferredSize(new Dimension(150,40));
 		item    =new JButton("Items");
 		item.setPreferredSize(new Dimension(150,40));
 		menuPanel=new JPanel();
@@ -50,39 +50,29 @@ public class Restaurant extends JFrame implements ActionListener {
 		menuPanel.add(order);
 		menuPanel.add(item);
 		add(menuPanel);
+		item.addActionListener(this);
 		customer.addActionListener(this);
 		menu.addActionListener(this);
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-           new Restaurant();
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection mycon= DriverManager.getConnection("jdbc:mysql://95.140.195.69:3306/A09155126","A09155126","A09155126");
-			Statement myStmt=mycon.createStatement();
-			ResultSet myRs=myStmt.executeQuery("select * from Product where productTitle='Rice'");
-			while(myRs.next())
-			{
-				System.out.println(myRs.getString("productTitle")+myRs.getString("sellPrice"));
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}//'A09155126@37.157.220.18'
-		catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
+
+		new Restaurant();
+
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		 if(e.getSource().equals(menu))
-		 {
+		if(e.getSource().equals(menu))
+		{
 			MenuWindow m=new MenuWindow();
-		 }
+		}
 		else if(e.getSource().equals(customer))
 		{
 			CustomerWindow c=new CustomerWindow ();
+		}
+		else if(e.getSource().equals(item))
+		{
+			ItemWindow itemWindow=new ItemWindow();
 		}
 	}
 }
