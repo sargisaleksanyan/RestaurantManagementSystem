@@ -1,8 +1,8 @@
 package Restaurant;
 
 import Customer.CustomerWindow;
-import meal_menu.ItemWindow;
-import meal_menu.MenuWindow;
+
+import Window.MenuWindow;
 
 import javax.swing.*;
 import java.awt.*;
@@ -72,7 +72,7 @@ public class Restaurant extends JFrame implements ActionListener {
 		}
 		else if(e.getSource().equals(item))
 		{
-			ItemWindow itemWindow=new ItemWindow();
+			Window.ItemWindow itemWindow=new Window.ItemWindow();
 		}
 	}
 }

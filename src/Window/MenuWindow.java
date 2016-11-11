@@ -1,4 +1,4 @@
-package meal_menu;
+package Window;
 
 import javax.swing.*;
 import java.awt.*;

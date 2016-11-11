@@ -1,4 +1,4 @@
-package meal_menu;
+package Window;
 
 
 import javax.swing.*;
@@ -63,6 +63,10 @@ public class ItemWindow  extends JFrame implements ActionListener{
         //  tablePanel.add(table);
         add(table);
         validate();
+    }
+    public void addItems()
+    {
+        
     }
     public static void main(String[] args) {
 
