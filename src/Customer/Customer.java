@@ -1,25 +1,33 @@
 package Customer;
 
 import Order.History;
+import Restaurant.Entity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Customer  {
+public class Customer implements Entity {
     private int customerId;
     //   private String
     private  String name ;
     private  String lastName;
-    private  int phoneNumber;
-    List<History> history=new ArrayList<History>();
+    private  String  phoneNumber;
+    private  String creditCard;
 
-    public Customer(int customerId, String name, String lastName)
+
+    public Customer( String name, String lastName,String phoneNumber)
     {
-        this.customerId = customerId;
         this.name = name;
         this.lastName = lastName;
+        this.phoneNumber=phoneNumber;
+    }
+    public String getCreditCard() {
+        return creditCard;
     }
 
+    public void setCreditCard(String creditCard) {
+        this.creditCard = creditCard;
+    }
     public Customer(int customerId)
     {
         this.customerId = customerId;
@@ -55,12 +63,12 @@ public class Customer  {
         this.lastName = lastName;
     }
 
-    public int getPhoneNumber()
+    public String getPhoneNumber()
     {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber)
+    public void setPhoneNumber(String phoneNumber)
     {
         this.phoneNumber = phoneNumber;
     }

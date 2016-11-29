@@ -1,6 +1,6 @@
 package Customer;
 
-import DataBaseManagment.CustomerDB;
+import DataBaseManagment.CustomerDataBase;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,11 +16,12 @@ public class CustomerWindow extends JFrame implements ActionListener{
     private JPanel  customerAction;
     private JPanel  registeration;
     private JPanel mainPanel;
-    private CustomerDB customerDB;
+    private CustomerDataBase customerDB;
     private JButton action;
     private JTextField name;
     private JTextField lastname;
     private JTextField phone;
+    private JTextField creditCard;
     private boolean isAddClicked=false;
     JLabel errorMessage;
     public CustomerWindow()
@@ -34,7 +35,7 @@ public class CustomerWindow extends JFrame implements ActionListener{
         customerAction=new JPanel();
         mainPanel.setLayout(new GridLayout(3,1));
         mainPanel.add(customerAction);
-        customerDB=new CustomerDB();
+        customerDB=new CustomerDataBase();
         add(mainPanel);
         dim.setSize(x, y);
         setVisible(true);
@@ -60,7 +61,11 @@ public class CustomerWindow extends JFrame implements ActionListener{
     }
     public void initalRegister()
     {
-
+        if(registeration!=null)
+        {
+            mainPanel.remove(registeration);
+            registeration=new JPanel();
+        }
         name =new JTextField();
         name.setPreferredSize(new Dimension(100,20));
         lastname =new JTextField();
@@ -70,14 +75,18 @@ public class CustomerWindow extends JFrame implements ActionListener{
         JLabel nameLabel=new JLabel("FirstName *");
         JLabel lastnameLabel=new JLabel("LastName *");
         JLabel phonelabel=new JLabel("Phone *");
+        JLabel creditCardLable=new JLabel("CreditCard");
+        creditCard=new JTextField();
         registeration=new JPanel();
-        registeration.setLayout(new GridLayout(4,1));
+        registeration.setLayout(new GridLayout(5,1));
         registeration.add(nameLabel);
         registeration.add(name);
         registeration.add(lastnameLabel);
         registeration.add(lastname);
         registeration.add(phonelabel);
         registeration.add(phone);
+        registeration.add(creditCardLable);
+        registeration.add(creditCard);
         action=new JButton();
         registeration.add(action);
         action.addActionListener(this);
@@ -115,10 +124,7 @@ public class CustomerWindow extends JFrame implements ActionListener{
         registeration.add(action);
         action.addActionListener(this);
         mainPanel.add(registeration);
-
         validate();
-
-
     }
     public static void main(String[] args) {
 
@@ -151,13 +157,23 @@ public class CustomerWindow extends JFrame implements ActionListener{
             {
                 String firstName=name.getText().toString();
                 String surName= lastname.getText().toString();
-                int number=Integer.parseInt(phone.getText().toString());
+                String phoneNumber=phone.getText().toString();
+                String credit=creditCard.getText().toString();
                 name.setText("");
                 lastname.setText("");
-                 phone.setText("");
+                phone.setText("");
+                boolean check=false;
+                Customer c=new Customer(firstName, surName, phoneNumber);
+            if(credit.equals("")) {
 
-             boolean check =customerDB.signUp(firstName,surName,number);
-
+                c.setCreditCard(null);
+                check = customerDB.insert(c);
+            }
+            else
+            {
+                c.setCreditCard(credit);
+                check = customerDB.insert(c);
+            }
                 if(!check)
                 {
                     errorMessage=new    JLabel();
@@ -169,9 +185,9 @@ public class CustomerWindow extends JFrame implements ActionListener{
             else
             {
 
-                int number=0;
+                String number="";
                 try {
-                   number = Integer.parseInt(phone.getText().toString());
+                   number = phone.getText().toString();
                 }
                 catch (NumberFormatException n)
                 {

@@ -2,7 +2,11 @@ package Restaurant;
 
 import Customer.CustomerWindow;
 
+import DataBaseManagment.ItemDataBase;
+import DataBaseManagment.OrderDataBase;
 import Window.MenuWindow;
+import Window.OrderWindow;
+import Window.ItemsWindow;
 
 import javax.swing.*;
 import java.awt.*;
@@ -37,9 +41,9 @@ public class Restaurant extends JFrame implements ActionListener {
 		menu    =new JButton("Menu");
 		menu.setPreferredSize(new Dimension(150,40));
 		customer=new JButton("Customers");
-
 		customer.setPreferredSize(new Dimension(150,40));
 		order   =new JButton("Orders");
+
 		order.setPreferredSize(new Dimension(150,40));
 		item    =new JButton("Items");
 		item.setPreferredSize(new Dimension(150,40));
@@ -53,6 +57,7 @@ public class Restaurant extends JFrame implements ActionListener {
 		item.addActionListener(this);
 		customer.addActionListener(this);
 		menu.addActionListener(this);
+		order.addActionListener(this);
 	}
 	public static void main(String[] args) {
 
@@ -72,7 +77,12 @@ public class Restaurant extends JFrame implements ActionListener {
 		}
 		else if(e.getSource().equals(item))
 		{
-			Window.ItemWindow itemWindow=new Window.ItemWindow();
+			ItemsWindow itemWindow=new ItemsWindow(new ItemDataBase(),0.5,0.8);
+		}
+		else if(e.getSource().equals(order))
+		{
+	//	 OrderWindow orderWindow=new OrderWindow(new OrderDataBase());
 		}
 	}
 }
+
