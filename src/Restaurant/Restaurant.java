@@ -2,10 +2,12 @@ package Restaurant;
 
 import Customer.CustomerWindow;
 
-import DataBaseManagment.ItemDataBase;
-import DataBaseManagment.OrderDataBase;
+import DataBaseManagment.*;
 import Window.MenuWindow;
+import Window.MenuItemWindow;
 import Window.OrderWindow;
+import Window.SupplierWindow;
+import Window.PurchaseWindow;
 import Window.ItemsWindow;
 
 import javax.swing.*;
@@ -20,13 +22,17 @@ public class Restaurant extends JFrame implements ActionListener {
 	private JButton customer ;
 	private JButton order;
 	private JButton item;
+	private JButton employee;
+	private JButton supplier;
+	private JButton storage;
+	private JButton menuItem;
 	private JPanel  menuPanel;
 	public Restaurant()
 	{
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 		this.getHeight();
-		int x=dim.width*8/10;
-		int y=dim.height*9/10;
+		int x=dim.width*5/10;
+		int y=dim.height*8/10;
 		this.setLocation(dim.width/2-x/2, dim.height/2-y/2);
 		dim.setSize(x, y);
 		setVisible(true);
@@ -38,26 +44,37 @@ public class Restaurant extends JFrame implements ActionListener {
 	}
 	public void initButtons()
 	{
-		menu    =new JButton("Menu");
+		menu    =new JButton("MenuItem");
 		menu.setPreferredSize(new Dimension(150,40));
 		customer=new JButton("Customers");
 		customer.setPreferredSize(new Dimension(150,40));
 		order   =new JButton("Orders");
-
+		menuItem=new JButton("MenuItem");
+        employee=new JButton("Empoyee");
+		supplier=new JButton("Supplier");
 		order.setPreferredSize(new Dimension(150,40));
 		item    =new JButton("Items");
+		storage=new JButton("Storage");
 		item.setPreferredSize(new Dimension(150,40));
 		menuPanel=new JPanel();
-		menuPanel.setLayout(new GridLayout(4,1));
+		menuPanel.setLayout(new GridLayout(8,1));
 		menuPanel.add(menu);
+		menuPanel.add(menuItem);
+		menuPanel.add(storage);
 		menuPanel.add(customer);
 		menuPanel.add(order);
 		menuPanel.add(item);
+		menuPanel.add(employee);
+		menuPanel.add(supplier);
 		add(menuPanel);
+		menuItem.addActionListener(this);
 		item.addActionListener(this);
 		customer.addActionListener(this);
 		menu.addActionListener(this);
 		order.addActionListener(this);
+		employee.addActionListener(this);
+		supplier.addActionListener(this);
+		storage.addActionListener(this);
 	}
 	public static void main(String[] args) {
 
@@ -77,11 +94,23 @@ public class Restaurant extends JFrame implements ActionListener {
 		}
 		else if(e.getSource().equals(item))
 		{
-			ItemsWindow itemWindow=new ItemsWindow(new ItemDataBase(),0.5,0.8);
+			new ItemsWindow(new ItemDataBase(),0.3,0.7);
 		}
 		else if(e.getSource().equals(order))
 		{
-	//	 OrderWindow orderWindow=new OrderWindow(new OrderDataBase());
+	     //OrderWindow orderWindow=new OrderWindow(new OrderDataBase());
+		}
+		else if(e.getSource().equals(supplier))
+		{
+			new SupplierWindow(new SupplierDataBase(),0.3,0.7);
+		}
+		else if(e.getSource().equals(storage))
+		{
+			new PurchaseWindow(new PurchaseItemDataBase(),0.3,0.7);
+		}
+		else if(e.getSource().equals(menuItem))
+		{
+			new MenuItemWindow(new MenuItemDataBase(),0.3,0.7);
 		}
 	}
 }

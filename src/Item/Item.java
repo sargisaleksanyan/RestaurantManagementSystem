@@ -2,7 +2,7 @@ package Item;
 
 import Restaurant.Entity;
 
-import java.util.function.Supplier;
+import Supplier.Supplier;
 
 public class Item implements Entity{
 
@@ -11,6 +11,7 @@ public class Item implements Entity{
     private  double price;
     private  int lifeTime;
     private Supplier supplier;
+
     public Item(String itemName,double price,int lifeTime)
     {
         this.itemName=itemName;
@@ -57,5 +58,19 @@ public class Item implements Entity{
         this.supplier = supplier;
     }
 
+    @Override
+    public int hashCode() {
+        return itemId;
+    }
 
+    @Override
+    public boolean equals(Object o)
+    {
+       /* if(this.hashCode()==o.hashCode())
+        {
+            return true;
+        }
+        */
+        return this.hashCode()==o.hashCode();
+    }
 }

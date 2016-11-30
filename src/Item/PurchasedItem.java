@@ -1,12 +1,21 @@
 package Item;
 
+import Restaurant.Entity;
+
 /**
  * Created by sargis on 11/28/16.
  */
-public class PurchasedItem {
+public class PurchasedItem implements Entity{
     private String purchaseDate;
     private int purchaseId;
-
+    private double purchaseAmount;
+    private double currentAmount;
+    private Item item;
+   public PurchasedItem(String purchaseDate,double purchaseAmount)
+    {
+        this.purchaseDate=purchaseDate;
+        this.purchaseAmount=purchaseAmount;
+    }
     public String getPurchaseDate() {
         return purchaseDate;
     }
@@ -47,7 +56,5 @@ public class PurchasedItem {
         this.item = item;
     }
 
-    private double purchaseAmount;
-    private double currentAmount;
-    private Item item;
+
 }

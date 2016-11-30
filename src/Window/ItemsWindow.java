@@ -1,10 +1,20 @@
 package Window;
 import DataBaseManagment.ItemDataBase;
+import DataBaseManagment.DataList;
 import Item.Item;
+import Supplier.Supplier;
+
+
 import javax.swing.*;
+import javax.swing.text.JTextComponent;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 
 /**
@@ -14,80 +24,93 @@ public class ItemsWindow extends Gui{
 
 
     private   JButton insertButton;
-    private   JButton addButton;
-    private   JButton addToStore;
-    private   JButton removeFromStore;
+   // private   JButton addButton;
+   // private   JButton modifyButton;
+    private   java.awt.List listView;
     private   JTextField nameField;
     private   JTextField priceField;
     private   JTextField lifeTime;
-    private   JSpinner supplier;
 
-    public ItemsWindow(ItemDataBase itemDataBase,double w,double h)
+    private   Supplier selectedSupplier;
+    private    DataList dataList;
+    private    HashMap<String,Supplier> supplerMap;
+    public   ItemsWindow(ItemDataBase itemDataBase,double w,double h)
     {
         super(itemDataBase,w,h);
     }
    // function add new item to database
     public void setItemTextField()
     {
-
-         JPanel  itemPanel=new JPanel();
-         JLabel nameLabel=new JLabel("Name");
-         itemPanel.setLayout(new GridLayout(5,1));
+        listView=new java.awt.List();
+        JPanel  itemPanel=new JPanel();
+         supplerMap=new HashMap<String, Supplier>();
+       
+         JTextField name=new JTextField(" Name");
+         name.setEditable(false);
+         dataList=new DataList();
+         itemPanel.setLayout(new GridLayout(8,1));
          nameField=new JTextField();
-         insertButton=new JButton("AddItem");
-         JLabel priceLabel=new JLabel("Price");
+         insertButton=new JButton(" AddItem");
          priceField=new JTextField();
-
-         JLabel  lifeLabel=new JLabel("LifeTime");
+         JTextField price=new JTextField(" Price");
+         price.setEditable(false);
          lifeTime=new JTextField();
+         JTextField lifeTimeLabel=new JTextField("LifeTime");
+         lifeTime=new JTextField();
+         JTextField supplierFiled=new JTextField("Supllier");
+         supplierFiled.setEditable(false);
+         lifeTimeLabel.setEditable(false);
+          List<Supplier> list=dataList.getAllSuppliers();
+          getSuppliers(list);
+          itemPanel.add(name);
 
-         JLabel supplierLabel=new JLabel("Supplier");
-         String []str={"Mush","Atenq","Bari Samaraci"};
-         SpinnerListModel model=new SpinnerListModel(str);
-         supplier=new JSpinner(model);
-
-         itemPanel.add(nameLabel);
          itemPanel.add(nameField);
 
-         itemPanel.add(priceLabel);
+
+         itemPanel.add(price);
          itemPanel.add(priceField);
 
-         itemPanel.add(lifeLabel);
-         itemPanel.add(lifeTime);
 
-         itemPanel.add(supplierLabel);
-         itemPanel.add(supplier);
-         itemPanel.add(insertButton);
+         itemPanel.add(lifeTimeLabel);
+         itemPanel.add(lifeTime);
          subPanel.add(itemPanel);
+
+         itemPanel.add(supplierFiled);
+         subPanel.add(listView);
+        // itemPanel.add(listView);
+         listView.addItemListener(new ItemListener() {
+             @Override
+             public void itemStateChanged(ItemEvent itemEvent) {
+                 int i= (int) itemEvent.getItem();
+
+                     String s = listView.getItem(i);
+
+                     selectedSupplier = supplerMap.get(s);
+
+             }
+         });
+      //  subPanel.add(insertButton);
+         itemPanel.add(insertButton);
          mainPanel.add( subPanel);
          insertButton.addActionListener(this);
          validate();
          mainPanel.repaint();
     }
-   
-  public void setButtons()
-  {
-      subPanel=new JPanel();
-      JPanel first=new JPanel();
-      first.setLayout(new GridLayout(4,1));
-      addButton=new JButton("Add");
-      addToStore=new JButton("Remove");
-      removeFromStore=new JButton("AddStore");
-      addButton.addActionListener(this);
-      first.add(addButton);
-      first.add(addToStore);
-      first.add(removeFromStore);
-      subPanel.setBounds(xCord, 0, height, width);
-      subPanel.setLayout(new BoxLayout( subPanel, BoxLayout.Y_AXIS));
-      subPanel.add(first);
-      mainPanel.add(subPanel);
-      validate();
-      mainPanel.repaint();
-  }
 
-    public static void main(String[] args) {
-
+    private void getSuppliers(List<Supplier> suppliers)
+    {
+        for(int i=0;i<suppliers.size();i++)
+        {
+            String str=suppliers.get(i).getName()+"  "+suppliers.get(i).getPhone();
+         //   strings.add(str);
+            listView.add(str);
+            supplerMap.put(str,suppliers.get(i));
+        }
+      //  return strings;
     }
+
+
+
     public void clearTextFields()
     {
         nameField.setText("");
@@ -95,14 +118,26 @@ public class ItemsWindow extends Gui{
         lifeTime.setText("");
     }
     @Override
-    public void insert() {
+    public void insert()
+    {
         String name= nameField.getText().toString();
         double price= Double.parseDouble(priceField.getText().toString());
         int lifeSpan=Integer.parseInt(lifeTime.getText().toString());
         Item item=new Item(name,price,lifeSpan);
-        if(db.insert(item))
+
+        if(selectedSupplier==null)
         {
-            clearTextFields();
+            if(db.insert(item))
+            {
+                clearTextFields();
+            }
+        }
+       else
+        {
+             item.setSupplier(selectedSupplier);
+             db.insert(item);
+            //clearTextFields();
+             clearTextFields();
         }
 
     }

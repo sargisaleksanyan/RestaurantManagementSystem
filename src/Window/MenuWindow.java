@@ -23,7 +23,7 @@ public class MenuWindow extends JFrame {
         setLayout(new FlowLayout());
         setSize(dim);
         initButtons();
-        setTitle("Menu");
+        setTitle("MenuItem");
     }
     public void initButtons()
     {

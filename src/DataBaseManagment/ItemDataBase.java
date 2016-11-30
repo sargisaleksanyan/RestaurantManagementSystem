@@ -1,6 +1,7 @@
 package DataBaseManagment;
 import Item.Item;
 import Restaurant.Entity;
+import Supplier.Supplier;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,14 +13,13 @@ import java.util.List;
  */
 public class ItemDataBase extends DataBase{
 
-    private static final String ITEMID="itemId";
-    private static final String ITEMTABLE="Item";
-    private static final String ITEMNAME="itemName";
-    private static final String LIFETIME="lifeTime";
-    private static final String PRICE="price";
-    private static final String idSuppler="idSuppler";
-    private static final String Supplier="Supplier";
-    private static final String SupplierName="name";
+    public static final String ITEMID="itemId";
+    public static final String ITEMTABLE="Item";
+    public static final String ITEMNAME="itemName";
+    public static final String LIFETIME="lifeTime";
+    public static final String PRICE="price";
+    public static final String idSuppler="supplierId";
+
 
 
 
@@ -29,12 +29,18 @@ public class ItemDataBase extends DataBase{
         ResultSet resultSet=null;
         try
         {
+            if(item.getSupplier()==null) {
+                statement.executeUpdate("INSERT INTO " + ITEMTABLE + "(" + ITEMNAME + "," + LIFETIME + "," + PRICE + ") VALUES ("
+                        + "'" + item.getItemName() + "', '" + item.getLifeTime() + "', '"
+                        + item.getPrice() + "');");
 
-            statement.executeUpdate("INSERT INTO "+ITEMTABLE +"("+ITEMNAME+","+LIFETIME+","+PRICE+") VALUES ("
-                    + "'" + item.getItemName() + "', '" + item.getLifeTime() + "', '"
-                    + item.getPrice() + "');");;
-
-
+            }
+          else
+            {
+                statement.executeUpdate("INSERT INTO " + ITEMTABLE + "(" + ITEMNAME + "," + LIFETIME + ","  + PRICE+ "," +idSuppler+ ") VALUES ("
+                        + "'" + item.getItemName() + "', '" + item.getLifeTime() + "', '"
+                        + item.getPrice() +"', '"+item.getSupplier().getSupplierID()+ "');");
+            }
          /* statement.executeUpdate("INSERT INTO Customer ("+NAME+","+LASTNAME+","+PHONE+") VALUES ("
                     + "'" + customer.getName() + "', '" + customer.getLastName() + "', '"
                     + customer.getPhoneNumber() + "');");*/
@@ -55,21 +61,5 @@ public class ItemDataBase extends DataBase{
     public <T> boolean check(T... t) {
         return false;
     }
-    public List<String> getAllSuppliers()
-    {
-        ResultSet resultSet=null;
-        List<String> supplier=new ArrayList<String>();
-        try {
-             resultSet=statement.executeQuery("Select * from "+Supplier);
-            while(resultSet.next())
-            {
-                supplier.add(resultSet.getString(SupplierName));
-            }
-          }
-         catch (SQLException e)
-          {
-            e.printStackTrace();
-          }
-        return supplier;
-    }
+
 }
