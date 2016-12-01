@@ -1,4 +1,4 @@
-package meal_menu;
+package Meal_Menu;
 
 public class Drink {
 

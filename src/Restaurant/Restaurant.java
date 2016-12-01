@@ -44,7 +44,7 @@ public class Restaurant extends JFrame implements ActionListener {
 	}
 	public void initButtons()
 	{
-		menu    =new JButton("MenuItem");
+		menu    =new JButton("Menu");
 		menu.setPreferredSize(new Dimension(150,40));
 		customer=new JButton("Customers");
 		customer.setPreferredSize(new Dimension(150,40));
