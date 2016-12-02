@@ -1,6 +1,6 @@
 package Window;
 
-import DataBaseManagment.DataBase;
+import DataBaseManagment.EntityDataBase;
 import Supplier.Supplier;
 
 import javax.swing.*;
@@ -17,8 +17,8 @@ public class SupplierWindow extends Gui {
     private JTextField phoneField;
     private JPanel supplerPanel;
 
-
-    public SupplierWindow(DataBase db, double w, double h)
+    private  JButton insertButton;
+    public SupplierWindow(EntityDataBase db, double w, double h)
     {
 
         super(db, w, h);
@@ -32,6 +32,9 @@ public class SupplierWindow extends Gui {
         String  phone=phoneField.getText().toString();
         Supplier supplier=new Supplier(name,lastName,phone);
         db.insert(supplier);
+        clearFields();
+        validate();
+
     }
 
 
@@ -51,15 +54,15 @@ public class SupplierWindow extends Gui {
        nameField=new JTextField();
        lastNameField=new JTextField();
        phoneField=new JTextField();
-       addButton=new JButton("Commit");
+       insertButton=new JButton("Insert");
        supplerPanel.add(nameLabel);
        supplerPanel.add(nameField);
        supplerPanel.add(lastNameLabel);
        supplerPanel.add(lastNameField);
        supplerPanel.add(phoneLabel);
        supplerPanel.add(phoneField);
-       supplerPanel.add(addButton);
-       addButton.addActionListener(this);
+       supplerPanel.add(insertButton);
+       insertButton.addActionListener(this);
        subPanel.add(supplerPanel);
        validate();
        mainPanel.repaint();
@@ -72,9 +75,9 @@ public class SupplierWindow extends Gui {
         {
             addFieldToSupplier();
         }
-       /* else if(act.getSource()==addButton)
+        else if(act.getSource()==insertButton)
         {
           insert();
-        }*/
+        }
     }
 }

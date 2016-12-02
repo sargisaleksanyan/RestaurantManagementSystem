@@ -24,8 +24,6 @@ public class ItemsWindow extends Gui{
 
 
     private   JButton insertButton;
-   // private   JButton addButton;
-   // private   JButton modifyButton;
     private   java.awt.List listView;
     private   JTextField nameField;
     private   JTextField priceField;
@@ -39,6 +37,7 @@ public class ItemsWindow extends Gui{
         super(itemDataBase,w,h);
     }
    // function add new item to database
+
     public void setItemTextField()
     {
         listView=new java.awt.List();
@@ -70,14 +69,13 @@ public class ItemsWindow extends Gui{
          itemPanel.add(price);
          itemPanel.add(priceField);
 
-
          itemPanel.add(lifeTimeLabel);
          itemPanel.add(lifeTime);
          subPanel.add(itemPanel);
 
          itemPanel.add(supplierFiled);
          subPanel.add(listView);
-        // itemPanel.add(listView);
+
          listView.addItemListener(new ItemListener() {
              @Override
              public void itemStateChanged(ItemEvent itemEvent) {
@@ -89,8 +87,8 @@ public class ItemsWindow extends Gui{
 
              }
          });
-      //  subPanel.add(insertButton);
-         itemPanel.add(insertButton);
+
+        itemPanel.add(insertButton);
          mainPanel.add( subPanel);
          insertButton.addActionListener(this);
          validate();
@@ -111,8 +109,7 @@ public class ItemsWindow extends Gui{
 
 
 
-    public void clearTextFields()
-    {
+    public void clearTextFields() {
         nameField.setText("");
         priceField.setText("");
         lifeTime.setText("");

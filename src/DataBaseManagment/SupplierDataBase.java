@@ -1,7 +1,5 @@
 package DataBaseManagment;
 
-import Customer.Customer;
-import Item.Item;
 import Restaurant.Entity;
 import Supplier.Supplier;
 
@@ -11,7 +9,7 @@ import java.sql.SQLException;
 /**
  * Created by sargis on 11/29/16.
  */
-public class SupplierDataBase extends DataBase {
+public class SupplierDataBase extends EntityDataBase {
 
      public static final String NAME="name";
      public static final String SURNAME="surname";

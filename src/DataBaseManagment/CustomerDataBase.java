@@ -8,7 +8,7 @@ import java.sql.*;
 /**
  * Created by sargis on 11/9/16.
  */
-public class CustomerDataBase extends DataBase {
+public class CustomerDataBase extends EntityDataBase {
 
    private  final String PHONE="phone";
    private  final String NAME="name";

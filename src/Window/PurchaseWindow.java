@@ -1,8 +1,7 @@
 package Window;
 
-import DataBaseManagment.DataBase;
+import DataBaseManagment.EntityDataBase;
 import DataBaseManagment.DataList;
-import Supplier.Supplier;
 
 
 import javax.swing.*;
@@ -31,7 +30,7 @@ public class PurchaseWindow extends Gui {
     private  Item selectedItem;
     private  int itemIndex;
     private  JButton insertButton;
-    public PurchaseWindow(DataBase db, double w, double h)
+    public PurchaseWindow(EntityDataBase db, double w, double h)
     {
         super(db, w, h);
     }

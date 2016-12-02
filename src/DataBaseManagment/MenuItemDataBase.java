@@ -1,7 +1,8 @@
 package DataBaseManagment;
 
 import Meal_Menu.MenuItem;
-import Meal_Menu.Meal;
+
+import Meal_Menu.MenuItemBuilder.Meal;
 import Meal_Menu.MenuItemCategory;
 import Restaurant.Entity;
 
@@ -10,7 +11,7 @@ import java.sql.SQLException;
 /**
  * Created by sargis on 11/29/16.
  */
-public class MenuItemDataBase extends DataBase {
+public class MenuItemDataBase extends EntityDataBase {
     public static  final String MI_NAME="name";
     public static  final String MI_PRICE="price";
     public static final  String MI_CATEGORYNAME="categoryName";

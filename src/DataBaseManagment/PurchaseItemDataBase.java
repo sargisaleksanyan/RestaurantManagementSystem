@@ -8,7 +8,7 @@ import java.sql.SQLException;
 /**
  * Created by sargis on 11/29/16.
  */
-public class PurchaseItemDataBase extends DataBase {
+public class PurchaseItemDataBase extends EntityDataBase {
 
     public static final String PURCHASE_ID ="purchaseItemId";
     public static final String PURCHASE_DATE="purchaseDate";

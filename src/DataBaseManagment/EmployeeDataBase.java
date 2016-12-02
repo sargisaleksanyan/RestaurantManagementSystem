@@ -5,7 +5,7 @@ import Restaurant.Entity;
 /**
  * Created by sargis on 11/29/16.
  */
-public class EmployeeDataBase extends DataBase {
+public class EmployeeDataBase extends EntityDataBase {
     @Override
     public boolean insert(Entity e) {
         return false;

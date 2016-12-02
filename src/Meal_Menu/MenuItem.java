@@ -1,6 +1,9 @@
 package Meal_Menu;
 
+import Item.Item;
 import Restaurant.Entity;
+
+import java.util.HashMap;
 
 public abstract class MenuItem  implements Entity
 {
@@ -10,7 +13,13 @@ public abstract class MenuItem  implements Entity
     private double cost;
     private String menuCategoryName;
 
+    public MenuItem(String menuitemName, double price, String menuCategoryName) {
+        this.menuitemName = menuitemName;
+        this.price = price;
+        this.menuCategoryName = menuCategoryName;
+    }
 
+    //private static HashMap<Item,Double> ingredient =new HashMap<Item,Double>();
     public String getMenuCategoryName() {
         return menuCategoryName;
     }
@@ -20,12 +29,7 @@ public abstract class MenuItem  implements Entity
     }
 
 
-    public MenuItem(String menuitemName,double price,String menuCategoryName)
-    {
-        this.menuitemName=menuitemName;
-        this.price=price;
-        this.menuCategoryName=menuCategoryName;
-    }
+
     public int getMenuItemId() {
         return menuItemId;
     }

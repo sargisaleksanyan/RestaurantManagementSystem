@@ -1,6 +1,6 @@
 package Window;
 
-import DataBaseManagment.DataBase;
+import DataBaseManagment.EntityDataBase;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,8 +20,8 @@ public abstract  class Gui extends JFrame implements ActionListener {
     protected JButton removeButton;
     protected JButton modifyButton;
     protected JPanel subPanel;
-    protected DataBase db;
-    public Gui(DataBase db,double w,double h)
+    protected EntityDataBase db;
+    public Gui(EntityDataBase db, double w, double h)
     {
         this.db=db;
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();

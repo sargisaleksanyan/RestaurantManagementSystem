@@ -1,17 +1,14 @@
 package DataBaseManagment;
 import Item.Item;
 import Restaurant.Entity;
-import Supplier.Supplier;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by sargis on 11/29/16.
  */
-public class ItemDataBase extends DataBase{
+public class ItemDataBase extends EntityDataBase {
 
     public static final String ITEMID="itemId";
     public static final String ITEMTABLE="Item";
