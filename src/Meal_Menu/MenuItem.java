@@ -18,7 +18,15 @@ public abstract class MenuItem  implements Entity
         this.price = price;
         this.menuCategoryName = menuCategoryName;
     }
+    public MenuItem(String menuitemName, double price)
+    {
+        this.menuitemName = menuitemName;
+        this.price = price;
+    }
+    public MenuItem()
+    {
 
+    }
     //private static HashMap<Item,Double> ingredient =new HashMap<Item,Double>();
     public String getMenuCategoryName() {
         return menuCategoryName;
@@ -27,7 +35,6 @@ public abstract class MenuItem  implements Entity
     public void setMenuCategoryName(String menuCategoryName) {
         this.menuCategoryName = menuCategoryName;
     }
-
 
 
     public int getMenuItemId() {

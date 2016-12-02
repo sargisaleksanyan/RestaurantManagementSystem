@@ -1,52 +1,37 @@
 package Window;
 
-import DataBaseManagment.DataList;
 import DataBaseManagment.EntityDataBase;
-import Item.Item;
-import Meal_Menu.MenuItemBuilder.MealBuilder;
-import Meal_Menu.MenuItemCategory;
-import Window.Ingrediant.Ingrediant;
 
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.List;
 import java.awt.event.ActionEvent;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.util.*;
+
 
 /**
  * Created by sargis on 11/30/16.
  */
 public class MenuItemWindow extends Gui {
 
-    private  JTextField  nameField;
-    private  JTextField  priceField;
-
+  //  private  JTextField  nameField;
+  //  private  JTextField  priceField;
     private  JButton     insertButton;
     private  JButton     drinkButton;
     private  JButton     mealButton;
-    private  java.awt.List itemList;
-    private  DataList    dataList;
-    private  String      selectedCategory;
     private  JPanel      menuItemPanel;
-    boolean  isDrinkadd = false;
-    private  JTextField  itemField;
-    private  MealBuilder mealBuilder;
-
+//  boolean  isDrinkadd = false;
+//  private  JTextField  itemField;
     public static JPanel buttonsPanel;
     public MenuItemWindow(EntityDataBase db, double w, double h)
     {
         super(db, w, h);
         buttonsPanel=new JPanel();
         buttonsPanel.setLayout(new GridLayout(2,1));
-
     }
     MenuItemListener menuItemListener;
     @Override
     public void insert() {
-
+        db.insert(menuItemListener.getMenuItem());
 
     }
 
@@ -70,18 +55,18 @@ public class MenuItemWindow extends Gui {
     {
         subPanel.remove(menuItemPanel);
         menuItemPanel=null;
-        menuItemListener=new MealView(subPanel);
         insertButton=new JButton("Insert");
         buttonsPanel.add(insertButton);
         subPanel.add(buttonsPanel);
+        insertButton.addActionListener(this);
       //  menuItemListener.makeView(subPanel);
         validate();
     }
-    public void setDrinkFiled()
+    /*public void setDrinkFiled()
     {
         subPanel.remove(menuItemPanel);
         menuItemPanel=null;
-        isDrinkadd=true;
+     //   isDrinkadd=true;
         menuItemPanel=new JPanel();
         insertButton=new JButton("Insert");
         menuItemPanel.setLayout(new GridLayout(6,1));
@@ -91,22 +76,22 @@ public class MenuItemWindow extends Gui {
         priceLabel.setEditable(false);
         JTextField itemNameLabel=new JTextField("ItemName");
         priceLabel.setEditable(false);
-        nameField=new JTextField();
-        priceField=new JTextField();
-        itemField=new JTextField();
+     //   nameField=new JTextField();
+    //    priceField=new JTextField();
+    //    itemField=new JTextField();
         menuItemPanel.add(nameLabel);
-        menuItemPanel.add(nameField);
+     //   menuItemPanel.add(nameField);
 
         menuItemPanel.add(priceLabel);
-        menuItemPanel.add(priceField);
+     //   menuItemPanel.add(priceField);
 
         menuItemPanel.add(itemNameLabel);
-        menuItemPanel.add(itemField);
+     //   menuItemPanel.add(itemField);
         subPanel.add(menuItemPanel);
         subPanel.add(insertButton);
         insertButton.addActionListener(this);
         validate();
-    }
+    }*/
 
 
     @Override
@@ -119,12 +104,19 @@ public class MenuItemWindow extends Gui {
         }
         else if (act.getSource()==mealButton)
         {
+            menuItemListener=new MealView(subPanel);
            setView();
         }
         else if (act.getSource()==drinkButton)
         {
            // setMealNameField();
-            setDrinkFiled();
+            menuItemListener=new DrinkView(subPanel);
+            setView();
         }
+        else if(act.getSource()==insertButton)
+        {
+            insert();
+        }
+
     }
 }

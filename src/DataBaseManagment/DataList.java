@@ -18,14 +18,13 @@ public class DataList extends DataBase {
         ResultSet resultSet=null;
         List<Item> items=new ArrayList<Item>();
         try {
-            resultSet=statement.executeQuery("Select * from "+ItemDataBase.ITEMTABLE);
+            resultSet=statement.executeQuery("Select * from "+ItemDataBase.ITEM_TABLE);
             while(resultSet.next())
             {
-                String name=resultSet.getString(ItemDataBase.ITEMNAME);
-                int itemId=resultSet.getInt(ItemDataBase.ITEMID);
-                int  lifetime=resultSet.getInt(ItemDataBase.LIFETIME);
+                String name=resultSet.getString(ItemDataBase.ITEM_NAME);
+                int itemId=resultSet.getInt(ItemDataBase.ITEM_ID);
+                int  lifetime=resultSet.getInt(ItemDataBase.LIFE_TIME);
                 double  price=resultSet.getInt(ItemDataBase.PRICE);
-
                  Item item=new Item(name,price,lifetime);
                  item.setItemId(itemId);
                  items.add(item);

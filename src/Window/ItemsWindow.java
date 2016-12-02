@@ -36,7 +36,7 @@ public class ItemsWindow extends Gui{
     {
         super(itemDataBase,w,h);
     }
-   // function add new item to database
+
 
     public void setItemTextField()
     {
@@ -100,11 +100,10 @@ public class ItemsWindow extends Gui{
         for(int i=0;i<suppliers.size();i++)
         {
             String str=suppliers.get(i).getName()+"  "+suppliers.get(i).getPhone();
-         //   strings.add(str);
             listView.add(str);
             supplerMap.put(str,suppliers.get(i));
         }
-      //  return strings;
+
     }
 
 
@@ -133,7 +132,6 @@ public class ItemsWindow extends Gui{
         {
              item.setSupplier(selectedSupplier);
              db.insert(item);
-            //clearTextFields();
              clearTextFields();
         }
 

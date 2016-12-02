@@ -17,6 +17,7 @@ public class MenuItemDataBase extends EntityDataBase {
     public static final  String MI_CATEGORYNAME="categoryName";
     public static final  String MI_FOODTYPE="foodtype";
     public static final  String MENU_ITEM_TABLE="MenuItem";
+    private IngredientDataBase ingredientDataBase;
     @Override
     public boolean insert(Entity e)
     {
@@ -34,10 +35,13 @@ public class MenuItemDataBase extends EntityDataBase {
                 else
                 {
                     Meal m=(Meal)mi;
+                    ingredientDataBase=new IngredientDataBase();
+
                     statement.executeUpdate("INSERT INTO " + MENU_ITEM_TABLE + "(" + MI_NAME + "," + MI_PRICE +
                             "," + MI_CATEGORYNAME +","+MI_FOODTYPE+ ") VALUES ("
                             + "'" + m.getMenuitemName() + "', '" + m.getPrice() + "', '"
                             + m.getMenuCategoryName() +"', '"+m.getFoodType()+ "');");
+                    ingredientDataBase.insert(m);
                     return true;
                 }
             }

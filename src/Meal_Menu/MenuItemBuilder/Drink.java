@@ -5,8 +5,8 @@ import Meal_Menu.MenuItem;
 public class Drink extends MenuItem{
 
      private Item item;
-    public Drink(String menuitemName, double price, String menuCategoryName) {
-        super(menuitemName, price, menuCategoryName);
+    public Drink(String menuitemName, double price) {
+        super(menuitemName, price);
     }
     public  void setItem(Item item)
     {
@@ -16,4 +16,5 @@ public class Drink extends MenuItem{
     public double getCost() {
         return item.getPrice();
     }
+
 }

@@ -18,18 +18,29 @@ public class Meal extends MenuItem {
     public void setFoodType(String foodType) {
         this.foodType = foodType;
     }
-    private static HashMap<Item,Double> ingredient =new HashMap<Item,Double>();
+    private static HashMap<Item,Double> ingredient;// =new HashMap<Item,Double>();
     public Meal(String menuitemName, double price, String menuCategoryName)
     {
       super(menuitemName,price,menuCategoryName);
     }
+    public Meal()
+    {
 
-
+    }
+    public HashMap<Item,Double> getIngredient()
+    {
+        return ingredient;
+    }
 
    public void addItem(Item item,Double amount)
    {
+       if(ingredient==null)
+       {
+           ingredient =new HashMap<Item,Double>();
+       }
       ingredient.put(item,amount);
    }
+
     @Override
     public double getCost()
     {

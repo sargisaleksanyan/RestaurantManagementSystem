@@ -10,6 +10,23 @@ public class MealBuilder {
     {
         meal=new Meal(menuitemName,price,menuCategoryName);
     }
+
+    public MealBuilder()
+    {
+       meal=new Meal();
+    }
+    public void setMeanuItemName(String meanuItemName)
+    {
+        meal.setMenuitemName(meanuItemName);
+    }
+    public void setPrice(double price)
+    {
+        meal.setPrice(price);
+    }
+    public void setMenuCategoryName(String menuCategoryName)
+    {
+        meal.setMenuCategoryName(menuCategoryName);
+    }
     public Meal setMenuItemId(int menuItemId)
     {
         meal.setMenuItemId(menuItemId);
@@ -24,6 +41,7 @@ public class MealBuilder {
     {
       meal.addItem(item,amount);
     }
+
     public Meal build()
     {
         return meal;
