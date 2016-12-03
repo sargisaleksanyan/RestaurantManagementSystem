@@ -12,11 +12,11 @@ import java.sql.SQLException;
  * Created by sargis on 11/29/16.
  */
 public class MenuItemDataBase extends EntityDataBase {
-    public static  final String MI_NAME="name";
-    public static  final String MI_PRICE="price";
-    public static final  String MI_CATEGORYNAME="categoryName";
-    public static final  String MI_FOODTYPE="foodtype";
-    public static final  String MENU_ITEM_TABLE="MenuItem";
+    public static final String MI_NAME="name";
+    public static final String MI_PRICE="price";
+    public static final String MI_CATEGORYNAME="categoryName";
+    public static final String MI_FOODTYPE="foodtype";
+    public static final String MENU_ITEM_TABLE="MenuItem";
     private IngredientDataBase ingredientDataBase;
     @Override
     public boolean insert(Entity e)
@@ -42,6 +42,7 @@ public class MenuItemDataBase extends EntityDataBase {
                             + "'" + m.getMenuitemName() + "', '" + m.getPrice() + "', '"
                             + m.getMenuCategoryName() +"', '"+m.getFoodType()+ "');");
                     ingredientDataBase.insert(m);
+
                     return true;
                 }
             }

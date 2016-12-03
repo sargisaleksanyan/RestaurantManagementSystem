@@ -1,6 +1,6 @@
 package Restaurant.SignInPage;
 
-import DataBaseManagment.EntityDataBase;
+
 import DataBaseManagment.SigninListener;
 import Employee.Employee;
 import Restaurant.Entity;
@@ -9,7 +9,7 @@ import Restaurant.ConstantName;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
+
 
 /**
  * Created by sargis on 12/3/16.

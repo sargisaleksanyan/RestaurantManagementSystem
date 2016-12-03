@@ -1,8 +1,10 @@
 package Restaurant;
 
 import DataBaseManagment.*;
+import Restaurant.FrontPage.CustomerPage;
 import Restaurant.FrontPage.FrontPage;
 import Restaurant.FrontPage.ManagerPage;
+import Restaurant.SignInPage.CustomerSignIn;
 import Restaurant.SignInPage.EmployeeSignIn;
 import Restaurant.SignInPage.SignInPage;
 
@@ -23,6 +25,9 @@ public class Restaurant extends JFrame implements ActionListener {
 	private SignInPage signInPage;
 	private FrontPage frontPage;
 	public static boolean isManagerClciked=false;
+
+
+
 	public Restaurant()
 	{
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -83,7 +88,7 @@ public class Restaurant extends JFrame implements ActionListener {
       if(e.getSource()==managerButton)
 	  {
 		  signInPage=new EmployeeSignIn(new EmployeeDataBase(),mainPage);
-		  isManagerClciked=false;
+		  isManagerClciked=true;
 		  frontPage=new ManagerPage();
           setSignIn();
 	  }
@@ -101,8 +106,14 @@ public class Restaurant extends JFrame implements ActionListener {
 			validate();
 			repaint();
 		}
-
-
+	  }
+	  else if(e.getSource()==customerButton)
+	  {
+		  isManagerClciked=false;
+		  signInPage=new CustomerSignIn(new CustomerDataBase(),mainPage);
+		  frontPage=new CustomerPage();
+		  setSignIn();
+		  //validate();
 	  }
 	}
 }

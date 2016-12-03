@@ -1,8 +1,4 @@
 package Restaurant.FrontPage;
-
-import Restaurant.FrontPage.FrontPage;
-import Restaurant.Restaurant;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -14,9 +10,7 @@ import  Window.SupplierWindow;
 import  Window.ItemsWindow;
 import  Window.*;
 import  DataBaseManagment.*;
-/**
- * Created by sargis on 12/3/16.
- */
+
 public class ManagerPage implements FrontPage {
 
     private JButton menu ;
@@ -29,37 +23,6 @@ public class ManagerPage implements FrontPage {
     private JButton menuItem;
 
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if(e.getSource().equals(menu))
-        {
-            MenuWindow m=new MenuWindow();
-        }
-        else if(e.getSource().equals(customer))
-        {
-            CustomerWindow c=new CustomerWindow ();
-        }
-        else if(e.getSource().equals(item))
-        {
-            new ItemsWindow(new ItemDataBase(),0.3,0.7);
-        }
-        else if(e.getSource().equals(order))
-        {
-            //OrderWindow orderWindow=new OrderWindow(new OrderDataBase());
-        }
-        else if(e.getSource().equals(supplier))
-        {
-            new SupplierWindow(new SupplierDataBase(),0.3,0.7);
-        }
-        else if(e.getSource().equals(storage))
-        {
-            new PurchaseWindow(new PurchaseItemDataBase(),0.3,0.7);
-        }
-        else if(e.getSource().equals(menuItem))
-        {
-            new MenuItemWindow(new MenuItemDataBase(),0.3,0.7);
-        }
-    }
 
 
     @Override
@@ -96,4 +59,36 @@ public class ManagerPage implements FrontPage {
         supplier.addActionListener(this);
         storage.addActionListener(this);
     }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource().equals(menu))
+        {
+            MenuWindow m=new MenuWindow();
+        }
+        else if(e.getSource().equals(customer))
+        {
+            CustomerWindow c=new CustomerWindow ();
+        }
+        else if(e.getSource().equals(item))
+        {
+            new ItemsWindow(new ItemDataBase(),0.3,0.7);
+        }
+        else if(e.getSource().equals(order))
+        {
+            //OrderWindow orderWindow=new OrderWindow(new OrderDataBase());
+        }
+        else if(e.getSource().equals(supplier))
+        {
+            new SupplierWindow(new SupplierDataBase(),0.3,0.7);
+        }
+        else if(e.getSource().equals(storage))
+        {
+            new PurchaseWindow(new PurchaseItemDataBase(),0.3,0.7);
+        }
+        else if(e.getSource().equals(menuItem))
+        {
+            new MenuItemWindow(new MenuItemDataBase(),0.3,0.7);
+        }
+    }
+
 }

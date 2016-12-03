@@ -13,7 +13,7 @@ public class CustomerDataBase extends EntityDataBase  implements SigninListener{
    private  final String PHONE="phone";
    private  final String NAME="name";
    private  final String LASTNAME="lastname";
-   private  final String id="lastname";
+   private  final String id="customerId";
    private  final String CREDITCARD="creditCard";
 
     public String customerLogIn(String phone)
@@ -21,7 +21,7 @@ public class CustomerDataBase extends EntityDataBase  implements SigninListener{
       String name=null;
         try
         {
-            ResultSet myRs=statement.executeQuery("select * from Customer where "+ PHONE+"+="+phone);
+            ResultSet myRs=statement.executeQuery("select * from Customer where "+ PHONE+"="+phone);
             while (myRs.next())
             {
                 //  System.out.println(myRs.getString("firstName") + myRs.getString("phone"));
@@ -77,7 +77,28 @@ public class CustomerDataBase extends EntityDataBase  implements SigninListener{
 
 
     @Override
-    public Entity signIn(String string) {
-        return null;
+    public Entity signIn(String phone) {
+        Customer customer=null;
+        try
+        {
+            ResultSet myRs=statement.executeQuery("select * from Customer where "+ PHONE+"="+phone);
+            while (myRs.next())
+            {
+                //  System.out.println(myRs.getString("firstName") + myRs.getString("phone"));
+                String   name=myRs.getString(NAME);
+                String   lastName=myRs.getString(LASTNAME);
+                String   phoneText=myRs.getString(PHONE);
+                String   creditNumber=myRs.getString(CREDITCARD);
+                int      id_number=myRs.getInt(id);
+                customer=new Customer( name, lastName,phoneText);
+                customer.setCreditCard(creditNumber);
+                customer.setCustomerId(id_number);
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return customer;
     }
 }
