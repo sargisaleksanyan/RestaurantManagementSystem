@@ -8,7 +8,7 @@ import java.sql.*;
 /**
  * Created by sargis on 11/9/16.
  */
-public class CustomerDataBase extends EntityDataBase {
+public class CustomerDataBase extends EntityDataBase  implements SigninListener{
 
    private  final String PHONE="phone";
    private  final String NAME="name";
@@ -50,6 +50,7 @@ public class CustomerDataBase extends EntityDataBase {
                 }
                 else
                 {
+
                     statement.executeUpdate("INSERT INTO Customer ("+NAME+","+LASTNAME+","+PHONE+","+CREDITCARD+") VALUES ("
                             + "'" + customer.getName() + "', '" + customer.getLastName() +
                             "', '" + customer.getPhoneNumber() + "', '"+customer.getCreditCard()+ "');");
@@ -72,5 +73,11 @@ public class CustomerDataBase extends EntityDataBase {
     @Override
     public <T> boolean check(T... t) {
         return false;
+    }
+
+
+    @Override
+    public Entity signIn(String string) {
+        return null;
     }
 }
