@@ -75,6 +75,31 @@ public class CustomerDataBase extends EntityDataBase  implements SigninListener{
         return false;
     }
 
+    public Customer signIn(int customerId)
+    {
+        Customer customer=null;
+        try
+        {
+            ResultSet myRs=statement.executeQuery("select * from Customer where "+ id+"="+customerId);
+            while (myRs.next())
+            {
+                //  System.out.println(myRs.getString("firstName") + myRs.getString("phone"));
+                String   name=myRs.getString(NAME);
+                String   lastName=myRs.getString(LASTNAME);
+                String   phoneText=myRs.getString(PHONE);
+                String   creditNumber=myRs.getString(CREDITCARD);
+                int      id_number=myRs.getInt(id);
+                customer=new Customer( name, lastName,phoneText);
+                customer.setCreditCard(creditNumber);
+                customer.setCustomerId(id_number);
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return customer;
+    }
 
     @Override
     public Entity signIn(String phone) {

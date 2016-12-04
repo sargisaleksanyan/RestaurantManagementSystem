@@ -1,10 +1,6 @@
 package Customer;
 
-import Order.History;
 import Restaurant.Entity;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Customer implements Entity {
     private int customerId;

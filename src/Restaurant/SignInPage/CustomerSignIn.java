@@ -47,7 +47,8 @@ public class CustomerSignIn extends SignInPage implements ActionListener {
     @Override
     public Entity getEntity()
     {
-        return signinListener.signIn(phoneField.getText().toString());
+        String phone=phoneField.getText().toString();
+        return signinListener.signIn(phone);
     }
 
     @Override

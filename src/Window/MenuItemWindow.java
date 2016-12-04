@@ -10,14 +10,10 @@ import java.awt.event.ActionEvent;
 
 public class MenuItemWindow extends Gui {
 
-  //  private  JTextField  nameField;
-  //  private  JTextField  priceField;
     private  JButton     insertButton;
     private  JButton     drinkButton;
     private  JButton     mealButton;
     private  JPanel      menuItemPanel;
-//  boolean  isDrinkadd = false;
-//  private  JTextField  itemField;
     public static JPanel buttonsPanel;
     public MenuItemWindow(EntityDataBase db, double w, double h)
     {
@@ -29,7 +25,6 @@ public class MenuItemWindow extends Gui {
     @Override
     public void insert() {
         db.insert(menuItemListener.getMenuItem());
-
     }
 
     public void setMenuItemChoice()
@@ -56,40 +51,8 @@ public class MenuItemWindow extends Gui {
         buttonsPanel.add(insertButton);
         subPanel.add(buttonsPanel);
         insertButton.addActionListener(this);
-      //  menuItemListener.makeView(subPanel);
         validate();
     }
-    /*public void setDrinkFiled()
-    {
-        subPanel.remove(menuItemPanel);
-        menuItemPanel=null;
-     //   isDrinkadd=true;
-        menuItemPanel=new JPanel();
-        insertButton=new JButton("Insert");
-        menuItemPanel.setLayout(new GridLayout(6,1));
-        JTextField nameLabel=new JTextField("Name");
-        nameLabel.setEditable(false);
-        JTextField priceLabel=new JTextField("PriceLabel");
-        priceLabel.setEditable(false);
-        JTextField itemNameLabel=new JTextField("ItemName");
-        priceLabel.setEditable(false);
-     //   nameField=new JTextField();
-    //    priceField=new JTextField();
-    //    itemField=new JTextField();
-        menuItemPanel.add(nameLabel);
-     //   menuItemPanel.add(nameField);
-
-        menuItemPanel.add(priceLabel);
-     //   menuItemPanel.add(priceField);
-
-        menuItemPanel.add(itemNameLabel);
-     //   menuItemPanel.add(itemField);
-        subPanel.add(menuItemPanel);
-        subPanel.add(insertButton);
-        insertButton.addActionListener(this);
-        validate();
-    }*/
-
 
     @Override
     public void actionPerformed(ActionEvent act) {
