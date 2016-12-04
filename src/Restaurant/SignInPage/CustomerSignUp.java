@@ -2,6 +2,8 @@ package Restaurant.SignInPage;
 
 import Customer.Customer;
 import DataBaseManagment.CustomerDataBase;
+import Restaurant.FrontPage.CustomerPage;
+import Restaurant.FrontPage.FrontPage;
 
 import javax.swing.*;
 import java.awt.*;
@@ -72,6 +74,10 @@ public class CustomerSignUp implements ActionListener{
       if(customerDB.insert(customer))
       {
             jpanel.removeAll();
+          CustomerPage customerPage=new CustomerPage();
+          customerPage.setEntity(customer);
+          customerPage.initlizeView(jpanel);
+          jpanel.getParent().validate();
       }
   }
     @Override

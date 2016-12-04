@@ -2,10 +2,11 @@ package Restaurant.FrontPage;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+
+import Restaurant.Entity;
 import  Window.MenuItemWindow;
-import  Window.MenuWindow;
+
 import  Customer.CustomerWindow;
-import  Window.EmployeeWindow;
 import  Window.SupplierWindow;
 import  Window.ItemsWindow;
 import  Window.*;
@@ -21,7 +22,7 @@ public class ManagerPage implements FrontPage {
     private JButton supplier;
     private JButton storage;
     private JButton menuItem;
-
+    java.awt.List dishList;
 
 
 
@@ -59,11 +60,17 @@ public class ManagerPage implements FrontPage {
         supplier.addActionListener(this);
         storage.addActionListener(this);
     }
+
+    @Override
+    public void setEntity(Entity entity) {
+
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource().equals(menu))
         {
-            MenuWindow m=new MenuWindow();
+          //  MenuWindow m=new MenuWindow();
         }
         else if(e.getSource().equals(customer))
         {

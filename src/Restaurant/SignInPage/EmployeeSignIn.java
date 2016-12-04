@@ -39,7 +39,7 @@ public class EmployeeSignIn extends SignInPage {
    {
        String phone=phoneField.getText().toString();
        Employee empoyee= (Employee) signinListener.signIn(phone);
-       if(Restaurant.isManagerClciked && empoyee.getPosition()!= ConstantName.MANAGER) {
+       if(Restaurant.isManagerClciked && !empoyee.getPosition().equals( ConstantName.MANAGER) ){
            return null;
        }
        return empoyee;

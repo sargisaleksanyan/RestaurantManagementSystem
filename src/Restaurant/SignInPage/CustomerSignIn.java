@@ -32,6 +32,7 @@ public class CustomerSignIn extends SignInPage implements ActionListener {
         jPanel.setLayout(new GridLayout(4,1));
         phoneLabel=new JTextField("Phone");
         phoneLabel.setEditable(false);
+        phoneLabel.addActionListener(this);
         phoneField=new JTextField();
         jPanel.add(phoneLabel);
         jPanel.add(phoneField);
@@ -59,5 +60,7 @@ public class CustomerSignIn extends SignInPage implements ActionListener {
            CustomerSignUp customerSignUp=new CustomerSignUp(jPanel);
            jPanel.getParent().validate();
        }
+
+
     }
 }

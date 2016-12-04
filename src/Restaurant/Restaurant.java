@@ -24,6 +24,7 @@ public class Restaurant extends JFrame implements ActionListener {
 	private JButton signInButton;
 	private SignInPage signInPage;
 	private FrontPage frontPage;
+	private Entity entity;
 	public static boolean isManagerClciked=false;
 
 
@@ -71,18 +72,15 @@ public class Restaurant extends JFrame implements ActionListener {
     public void setSignIn()
 	{
 		remove(buttonsPanel);
-
 		signInButton=new JButton("Sign in");
 		signInButton.addActionListener(this);
 		add(mainPage);
+
 		mainPage.add(signInButton);
 		repaint();
 		validate();
 	}
-	public void setView()
-	{
 
-	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
       if(e.getSource()==managerButton)
@@ -94,13 +92,14 @@ public class Restaurant extends JFrame implements ActionListener {
 	  }
 	  else if(e.getSource()==signInButton)
 	  {
-
-		if (signInPage.getEntity()!=null)
+		  entity=signInPage.getEntity();
+		if (entity!=null)
 		{
 			remove(mainPage);
 			mainPage=null;
 			mainPage=new JPanel();
 			validate();
+			frontPage.setEntity(entity);
 			frontPage.initlizeView(mainPage);
 			add(mainPage);
 			validate();
@@ -112,6 +111,7 @@ public class Restaurant extends JFrame implements ActionListener {
 		  isManagerClciked=false;
 		  signInPage=new CustomerSignIn(new CustomerDataBase(),mainPage);
 		  frontPage=new CustomerPage();
+
 		  setSignIn();
 		  //validate();
 	  }

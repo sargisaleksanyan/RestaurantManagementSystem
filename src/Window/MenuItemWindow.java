@@ -8,9 +8,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 
 
-/**
- * Created by sargis on 11/30/16.
- */
 public class MenuItemWindow extends Gui {
 
   //  private  JTextField  nameField;
