@@ -10,10 +10,11 @@ import java.util.List;
  * Created by sargis on 12/5/16.
  */
 public class TemporaryOrderItemDataBase  extends EntityDataBase  {
-    public static final String ORDERITEM_TABLE="OrderItem";
+    public static final String ORDERITEM_TABLE="TempOrderItem";
     public static final String ORDER_ID="orderId";
     public static final String ORDER_MENUITEM="menuItemName";
     public static final String QUNTITY="quntity";
+
     @Override
     public boolean insert(Entity e) {
         Order o= (Order) e;

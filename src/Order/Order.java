@@ -11,8 +11,17 @@ public class Order  implements Entity{
     private int orderId;
     private Customer customer;
     private String orderDate;
-    private boolean approved;
+    public int approved;
 
+    public int getTable() {
+        return table;
+    }
+
+    public void setTable(int table) {
+        this.table = table;
+    }
+
+    private int table ;
     public List<OrderMenuItem> getOrderMenuItems() {
         return orderMenuItems;
     }
@@ -59,13 +68,13 @@ public class Order  implements Entity{
         this.bill = bill;
     }*/
 
-    public boolean isApproved() {
+   /* public int getApproved() {
         return approved;
     }
 
-    public void setApproved(boolean approved) {
+    public void setApproved(int approved) {
         this.approved = approved;
-    }
+    }*/
 
     @Override
     public int hashCode() {

@@ -15,6 +15,8 @@ public class TemporaryOrderDataBase extends EntityDataBase{
     public  final static String ORDER_ID="orderId";
     public  final static String CUSTOMER_ID="customerId";
     public  final static String ORDER_DATE="orderDate";
+    public  final static String ISAPPROVED="isapproved";
+    public  final static String TABLE_NUMBER="tablenum";
     public  final static String BILL="bill";
 
     @Override
@@ -23,14 +25,15 @@ public class TemporaryOrderDataBase extends EntityDataBase{
 
         try {
             statement.executeUpdate("INSERT INTO " +ORDER_TABLE+ "(" + ORDER_DATE + "," + CUSTOMER_ID +
-                    "," +BILL+ ") VALUES ("
+                    "," +BILL+","+ISAPPROVED+","+TABLE_NUMBER+ ") VALUES ("
                     + "'" + o.getOrderDate() + "', '" + o.getCustomer().getCustomerId() + "', '"
-                    + o.getBill() + "');");
+                    + o.getBill() +"', '"+o.approved+"', '"+o.getTable()+ "');");
+            return true;
         } catch (SQLException e1) {
             e1.printStackTrace();
             return false;
         }
-        return true;
+        
 
     }
 

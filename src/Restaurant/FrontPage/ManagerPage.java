@@ -83,7 +83,7 @@ public class ManagerPage implements FrontPage {
         }
         else if(e.getSource().equals(order))
         {
-           new OrderManagmentWindow();
+           new OrderManagmentWindow(0.3,0.7);
         }
         else if(e.getSource().equals(supplier))
         {

@@ -27,7 +27,7 @@ public class OrderDataBase extends EntityDataBase {
                     "," +BILL+ ") VALUES ("
                     + "'" + o.getOrderDate() + "', '" + o.getCustomer().getCustomerId() + "', '"
                     + o.getBill() + "');");
-            OrderManagmentWindow.addToTextView();
+
         } catch (SQLException e1) {
             e1.printStackTrace();
             return false;
