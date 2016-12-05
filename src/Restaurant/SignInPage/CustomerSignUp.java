@@ -74,8 +74,10 @@ public class CustomerSignUp implements ActionListener{
       if(customerDB.insert(customer))
       {
             jpanel.removeAll();
+          Customer cus= (Customer) customerDB.signIn(phoneNumber);
           CustomerPage customerPage=new CustomerPage();
-          customerPage.setEntity(customer);
+
+          customerPage.setEntity(cus);
           customerPage.initlizeView(jpanel);
           jpanel.getParent().validate();
       }

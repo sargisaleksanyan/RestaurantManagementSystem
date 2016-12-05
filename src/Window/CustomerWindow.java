@@ -1,5 +1,6 @@
-package Customer;
+package Window;
 
+import Customer.Customer;
 import DataBaseManagment.CustomerDataBase;
 
 import javax.swing.*;
@@ -24,12 +25,12 @@ public class CustomerWindow extends JFrame implements ActionListener{
     private JTextField creditCard;
     private boolean isAddClicked=false;
     JLabel errorMessage;
-    public CustomerWindow()
+    public CustomerWindow(double w, double h)
     {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.getHeight();
-        int x=dim.width*5/10;
-        int y=dim.height*8/10;
+        int x= (int) (dim.width*w);
+        int y= (int) (dim.height*h);
         this.setLocation(dim.width/2-x/2, dim.height/2-y/2);
         mainPanel=new JPanel();
         customerAction=new JPanel();
@@ -126,10 +127,7 @@ public class CustomerWindow extends JFrame implements ActionListener{
         mainPanel.add(registeration);
         validate();
     }
-    public static void main(String[] args) {
 
-          new CustomerWindow();
-    }
 
 
     @Override

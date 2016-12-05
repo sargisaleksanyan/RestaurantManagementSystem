@@ -11,6 +11,7 @@ import java.sql.SQLException;
 public class ItemDataBase extends EntityDataBase {
 
     public static final String ITEM_ID ="itemId";
+
     public static final String ITEM_TABLE="Item";
     public static final String ITEM_NAME ="itemName";
     public static final String LIFE_TIME ="lifeTime";
@@ -59,6 +60,31 @@ public class ItemDataBase extends EntityDataBase {
             while(resultSet.next())
             {
               // Item item =new Item()
+                String iName=resultSet.getString(ITEM_NAME);
+                double price=resultSet.getDouble(PRICE);
+                int id=resultSet.getInt(ITEM_ID);
+                int lifeTime=resultSet.getInt(LIFE_TIME);
+                item=new Item(iName,price,lifeTime);
+
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return item;
+    }
+    public synchronized Item getItemByID(int itemID)
+    {
+        ResultSet resultSet=null;
+        Item item=null;
+        try
+        {
+            resultSet=statement.executeQuery("select * from "+ITEM_TABLE+" where "+ITEM_ID+"="+itemID);
+
+            while(resultSet.next())
+            {
+                // Item item =new Item()
                 String iName=resultSet.getString(ITEM_NAME);
                 double price=resultSet.getDouble(PRICE);
                 int id=resultSet.getInt(ITEM_ID);

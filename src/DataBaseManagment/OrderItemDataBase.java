@@ -27,6 +27,7 @@ public class OrderItemDataBase extends EntityDataBase {
                         "," + QUNTITY + ") VALUES ("
                         + "'" + o.getOrderId() + "', '" + orderItem.getMenuItem().getMenuitemName() + "', '"
                         + orderItem.getAmount() + "');");
+
             }
         }
         catch (SQLException e1) {

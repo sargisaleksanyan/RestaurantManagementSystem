@@ -44,14 +44,14 @@ public class OrderDataBase extends EntityDataBase {
     }
 
 
-    public Order getOrder(int customerID,String orderDate)
+    public synchronized Order getOrder(int customerID,String orderDate)
     {
         CustomerDataBase db=new CustomerDataBase();
         Order order=null;
         ResultSet resultSet;
         try {
             resultSet=statement.executeQuery("select * from "+ORDER_TABLE+" where "+CUSTOMER_ID
-                    +"="+"'"+customerID+"'"+" and"+ORDER_DATE+"="+orderDate+"'");
+                    +"="+"'"+customerID+"'"+" and "+ORDER_DATE+"='"+orderDate+"'");
             while(resultSet.next())
             {
                 double bill=resultSet.getDouble(BILL);

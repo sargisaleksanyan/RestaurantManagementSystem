@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Order  implements Entity{
 
-    private int OrderId;
+    private int orderId;
     private Customer customer;
     private String orderDate;
     private boolean approved;
@@ -16,9 +16,10 @@ public class Order  implements Entity{
     public List<OrderMenuItem> getOrderMenuItems() {
         return orderMenuItems;
     }
-
-
-
+    public void setOrderMenuItems(List<OrderMenuItem> orderMenuItems)
+    {
+        this.orderMenuItems=orderMenuItems;
+    }
     private List<OrderMenuItem> orderMenuItems;
     public Customer getCustomer() {
         return customer;
@@ -28,11 +29,11 @@ public class Order  implements Entity{
         this.customer = customer;
     }
     public int getOrderId() {
-        return OrderId;
+        return orderId;
     }
 
     public void setOrderId(int orderId) {
-        OrderId = orderId;
+        this.orderId = orderId;
     }
 
 
@@ -66,7 +67,19 @@ public class Order  implements Entity{
         this.approved = approved;
     }
 
-
+    @Override
+    public int hashCode() {
+        return orderId;
+    }
+    public boolean equals(Object o)
+    {
+       /* if(this.hashCode()==o.hashCode())
+        {
+            return true;
+        }
+        */
+        return this.hashCode()==o.hashCode();
+    }
     public Order()
     {
 
@@ -77,7 +90,7 @@ public class Order  implements Entity{
     }
     public void addItem(OrderMenuItem orderMenuItem)
     {
-        if(orderMenuItem==null)
+        if(orderMenuItems==null)
         {
             orderMenuItems= new ArrayList<OrderMenuItem>();
         }

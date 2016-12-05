@@ -1,6 +1,9 @@
 package Window.Menu;
 
+import Customer.Customer;
 import DataBaseManagment.DataList;
+import DataBaseManagment.OrderDataBase;
+import DataBaseManagment.OrderItemDataBase;
 import Meal_Menu.*;
 import Meal_Menu.MenuItem;
 import Meal_Menu.MenuItemBuilder.Meal;
@@ -8,18 +11,13 @@ import Meal_Menu.MenuItemBuilder.Meal;
 import javax.swing.*;
 
 import java.awt.*;
-
+import Order.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * Created by sargis on 10/24/16.
- */
 public class MenuWindow extends JFrame implements ActionListener{
 
     protected int xCord;
@@ -34,17 +32,22 @@ public class MenuWindow extends JFrame implements ActionListener{
     private  List<JRadioButton> dishs;
     private  List<JRadioButton> salads;
     private  List<JRadioButton> drinks;
+    JTextField orderDate;
     private  java.util.List<MenuItem> menuItemList;
     private  JScrollPane jScrollPane;
     private  DataList dataList;
     private HashMap<JRadioButton,MenuItem> menuItemButtonMap;
     private HashMap<JRadioButton,JTextField> radioToText;
-    public MenuWindow(double widthPercent,double heightPercent)
+    private Customer customer;
+    private OrderDataBase orderDataBase;
+    public MenuWindow(Customer customer,double widthPercent, double heightPercent)
     {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.getHeight();
+        this.customer=customer;
         menuItemButtonMap=new HashMap<>();
         radioToText=new HashMap<>();
+        orderDate=new JTextField();
         int x = (int) (dim.width * widthPercent);
         int y = (int) (dim.height * heightPercent);
         this.setLocation(dim.width / 2 - x / 2, dim.height / 2 - y / 2);
@@ -54,7 +57,7 @@ public class MenuWindow extends JFrame implements ActionListener{
         setLayout(new FlowLayout());
         setSize(dim);
         initButtons();
-
+         orderDataBase=new OrderDataBase();
         setTitle("MenuItem");
     }
     public void initButtons()
@@ -177,6 +180,7 @@ public class MenuWindow extends JFrame implements ActionListener{
         order=new JButton("Order");
         order.addActionListener(this);
         menuPanel.add(saladPanel);
+        menuPanel.add(orderDate);
         menuPanel.add(order);
 
 
@@ -189,9 +193,64 @@ public class MenuWindow extends JFrame implements ActionListener{
 
     }
 
+    public void insert()
+    {
+        Order order=new Order();
+        String date=orderDate.getText().toString();
+        if(date.equals(""))
+        {
+            date=CurrentTime.getTime();
+        }
+        order.setCustomer(customer);
+        order.setOrderDate(date);
 
+        for(int i=0;i<dishs.size();i++)
+        {
+            if(dishs.get(i).isSelected())
+            {
+               // private HashMap<JRadioButton,MenuItem> menuItemButtonMap;
+              //  private HashMap<JRadioButton,JTextField> radioToText;
+                MenuItem mi=menuItemButtonMap.get(dishs.get(i));
+                String amount=radioToText.get(dishs.get(i)).getText().toString();
+                int quntity=1;
+                if(!amount.equals("")) {
+                    quntity = Integer.parseInt(amount);
+                }
+                OrderMenuItem orderMenuItem=new OrderMenuItem(mi,quntity);
+                order.addItem(orderMenuItem);
+            }
+
+        }
+        for(int i=0;i<drinks.size();i++)
+        {
+            MenuItem mi=menuItemButtonMap.get(dishs.get(i));
+            String amount=radioToText.get(dishs.get(i)).getText().toString();
+            int quntity=1;
+            if(!amount.equals("")) {
+                quntity = Integer.parseInt(amount);
+            }
+            OrderMenuItem orderMenuItem=new OrderMenuItem(mi,quntity);
+            order.addItem(orderMenuItem);
+        }
+        for(int i=0;i<salads.size();i++)
+        {
+            MenuItem mi=menuItemButtonMap.get(dishs.get(i));
+            String amount=radioToText.get(dishs.get(i)).getText().toString();
+            int quntity=1;
+            if(!amount.equals("")) {
+                quntity = Integer.parseInt(amount);
+            }
+            OrderMenuItem orderMenuItem=new OrderMenuItem(mi,quntity);
+            order.addItem(orderMenuItem);
+        }
+        orderDataBase.insert(order);
+        Order resultedOrder=orderDataBase.getOrder(customer.getCustomerId(),date);
+        order.setOrderId(resultedOrder.getOrderId());
+        OrderItemDataBase orderItemDataBase=new OrderItemDataBase();
+        orderItemDataBase.insert(order);
+    }
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
-
+         insert();
     }
 }

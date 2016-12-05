@@ -6,7 +6,8 @@ import java.awt.event.ActionEvent;
 import Restaurant.Entity;
 import  Window.MenuItemWindow;
 
-import  Customer.CustomerWindow;
+import Window.CustomerWindow;
+import Window.OrderWindow.OrderManagmentWindow;
 import  Window.SupplierWindow;
 import  Window.ItemsWindow;
 import  Window.*;
@@ -74,7 +75,7 @@ public class ManagerPage implements FrontPage {
         }
         else if(e.getSource().equals(customer))
         {
-            CustomerWindow c=new CustomerWindow ();
+            CustomerWindow c=new CustomerWindow (0.3,0.7);
         }
         else if(e.getSource().equals(item))
         {
@@ -82,7 +83,7 @@ public class ManagerPage implements FrontPage {
         }
         else if(e.getSource().equals(order))
         {
-            //OrderWindow orderWindow=new OrderWindow(new OrderDataBase());
+          OrderManagmentWindow orderWindow=new OrderManagmentWindow();
         }
         else if(e.getSource().equals(supplier))
         {

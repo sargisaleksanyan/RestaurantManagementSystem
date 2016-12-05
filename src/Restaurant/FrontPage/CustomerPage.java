@@ -50,6 +50,6 @@ public class CustomerPage implements FrontPage  {
     @Override
     public void actionPerformed(ActionEvent e)
     {
-        MenuWindow mw=new MenuWindow(0.4,0.75);
+       new MenuWindow(customer,0.4,0.75);
     }
 }
