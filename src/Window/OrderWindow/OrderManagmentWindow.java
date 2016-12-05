@@ -4,16 +4,21 @@ import DataBaseManagment.DataList;
 import Order.Order;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by sargis on 11/28/16.
  */
-public class OrderManagmentWindow extends JFrame {
+public class OrderManagmentWindow extends JFrame implements ActionListener{
    protected int xCord;
    protected int yCord ;
    protected int width;
    protected int height ;
+
    private JTextArea jTextArea;
+   private  JButton refreshButton;
+
     public OrderManagmentWindow()
     {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -27,14 +32,20 @@ public class OrderManagmentWindow extends JFrame {
         setVisible(true);
         setLayout(new FlowLayout());
         setSize(dim);
-
+        refreshButton=new JButton("Refresh");
+        refreshButton.addActionListener(this);
+        add(refreshButton);
+     //   dataList=new DataList();
         setVisible(true);
         jTextArea=new JTextArea();
-        addToTextView();
         add(jTextArea);
+        addToTextView();
+
     }
-    public void addToTextView()
+
+    public  void addToTextView()
     {
+       // DataList dataList=new DataList((DbConnection) dbConnection.getStatement());
         DataList dataList=new DataList();
         java.util.List<Order> orderList=dataList.getAllOrders();
         String text="";
@@ -42,18 +53,21 @@ public class OrderManagmentWindow extends JFrame {
         {
            text=text +orderList.get(i).getOrderId()+" ";
         }
+
         jTextArea.setText(text);
         validate();
         repaint();
     }
 
     public static void main(String[] args) {
-      OrderManagmentWindow omw=new OrderManagmentWindow();
-        while(true)
-        {
-            omw.addToTextView();
-            omw.repaint();
-            omw.validate();
-        }
+     // OrderManagmentWindow omw=new OrderManagmentWindow();
+
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent actionEvent) {
+
+        addToTextView();
     }
 }

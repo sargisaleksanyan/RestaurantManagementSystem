@@ -1,18 +1,17 @@
 package DataBaseManagment;
 
-import Restaurant.Entity;
 import Order.Order;
-import Window.Menu.MenuWindow;
-import Window.OrderWindow.OrderManagmentWindow;
+import Restaurant.Entity;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * Created by sargis on 11/29/16.
+ * Created by sargis on 12/5/16.
  */
-public class OrderDataBase extends EntityDataBase {
-    public  final static String ORDER_TABLE="OrderT";
+public class TemporaryOrderDataBase extends EntityDataBase{
+
+    public  final static String ORDER_TABLE="TempOrder";
     public  final static String ORDER_ID="orderId";
     public  final static String CUSTOMER_ID="customerId";
     public  final static String ORDER_DATE="orderDate";
@@ -27,7 +26,6 @@ public class OrderDataBase extends EntityDataBase {
                     "," +BILL+ ") VALUES ("
                     + "'" + o.getOrderDate() + "', '" + o.getCustomer().getCustomerId() + "', '"
                     + o.getBill() + "');");
-            OrderManagmentWindow.addToTextView();
         } catch (SQLException e1) {
             e1.printStackTrace();
             return false;
@@ -47,7 +45,7 @@ public class OrderDataBase extends EntityDataBase {
     }
 
 
-    public  synchronized Order getOrder(int customerID,String orderDate)
+    public synchronized Order getOrder(int customerID,String orderDate)
     {
         CustomerDataBase db=new CustomerDataBase();
         Order order=null;
@@ -69,5 +67,4 @@ public class OrderDataBase extends EntityDataBase {
         }
         return order;
     }
-
 }
