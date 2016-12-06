@@ -7,14 +7,13 @@ import Meal_Menu.*;
 import Meal_Menu.MenuItem;
 import Restaurant.*;
 import Window.Menu.MenuWindow;
+import Window.*;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
-/**
- * Created by sargis on 12/3/16.
- */
+
 public class CustomerPage implements FrontPage  {
 
 
@@ -50,6 +49,13 @@ public class CustomerPage implements FrontPage  {
     @Override
     public void actionPerformed(ActionEvent e)
     {
-       new MenuWindow(customer,0.4,0.75);
+        if(e.getSource()==menuButton) {
+            new MenuWindow(customer, 0.4, 0.75);
+        }
+        else if(e.getSource()==orderButton)
+        {
+            new CustomerOrderWindow(customer,0.4,0.75);
+        }
+
     }
 }

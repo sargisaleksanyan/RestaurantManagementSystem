@@ -6,9 +6,7 @@ import Restaurant.Entity;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- * Created by sargis on 12/5/16.
- */
+
 public class TemporaryOrderDataBase extends EntityDataBase{
 
     public  final static String ORDER_TABLE="TempOrder";
@@ -39,9 +37,19 @@ public class TemporaryOrderDataBase extends EntityDataBase{
 
     @Override
     public <T> boolean update(T... t) {
+
+
+
         return false;
     }
-
+    public void approve(Order o)
+    {
+        try {
+            statement.executeUpdate("UPDATE "+ORDER_TABLE+" set "+ISAPPROVED+"=1"+" where "+ORDER_ID+"="+o.getOrderId());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
     @Override
     public <T> boolean check(T... t) {
         return false;
@@ -61,7 +69,9 @@ public class TemporaryOrderDataBase extends EntityDataBase{
                 double bill=resultSet.getDouble(BILL);
                 int id=resultSet.getInt(ORDER_ID);
                 order=new Order();
+                int table=resultSet.getInt(TABLE_NUMBER);
                 order.setCustomer(db.signIn(id));
+                order.setTable(table);
                 order.setOrderId(id);
                 order.setOrderDate(orderDate);
             }

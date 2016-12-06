@@ -1,11 +1,9 @@
-package Window.OrderWindow;
+package Window;
 
-
-import Customer.Customer;
 import DataBaseManagment.TempDataList;
 import DataBaseManagment.TemporaryOrderDataBase;
-import DataBaseManagment.TemporaryOrderItemDataBase;
 import Order.Order;
+import  Order.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -14,9 +12,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 
-import Order.OrderMenuItem;
 
-public class OrderManagmentWindow extends JFrame implements ActionListener{
+public class EmployeeOrdersWindow extends JFrame implements ActionListener {
     protected int xCord;
     protected int yCord ;
     protected int width;
@@ -29,7 +26,7 @@ public class OrderManagmentWindow extends JFrame implements ActionListener{
 
     HashMap<JRadioButton,Order> buttonOrderHashMap;
 
-    public OrderManagmentWindow(double w,double h)
+    public EmployeeOrdersWindow(double w, double h)
     {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.getHeight();
@@ -48,28 +45,24 @@ public class OrderManagmentWindow extends JFrame implements ActionListener{
         initlizeView();
         addToTextView();
     }
-   public void initlizeView()
-   {
-       refreshButton=new JButton("Refresh");
-       approveButton=new JButton("Approve");
-       JPanel buttonPanel=new JPanel();
-       buttonPanel.setLayout(new GridLayout(2,1));
-       buttonPanel.add(refreshButton);
-       buttonPanel.add(approveButton);
-       refreshButton.addActionListener(this);
-       approveButton.addActionListener(this);
-       mainPanel=new JPanel();
-       setContentPane(mainPanel);
-      /// subPanel=new JPanel();
-       mainPanel.setBounds(xCord, 0, height, width);
-       mainPanel.setLayout(new BoxLayout( mainPanel, BoxLayout.Y_AXIS));
+    public void initlizeView()
+    {
+
+        JPanel buttonPanel=new JPanel();
+        buttonPanel.setLayout(new GridLayout(2,1));
+
+
+        mainPanel=new JPanel();
+        setContentPane(mainPanel);
+        /// subPanel=new JPanel();
+        mainPanel.setBounds(xCord, 0, height, width);
+        mainPanel.setLayout(new BoxLayout( mainPanel, BoxLayout.Y_AXIS));
 //       mainPanel.add(mainPanel);
-       mainPanel.add(refreshButton);
-       mainPanel.add(approveButton);
-       jScrollPane=new JScrollPane(mainPanel);
-       setContentPane(jScrollPane);
-       jScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-   }
+
+        jScrollPane=new JScrollPane(mainPanel);
+        setContentPane(jScrollPane);
+        jScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+    }
     public void addOrderData()
     {
         TempDataList dataList=new TempDataList();
@@ -77,14 +70,14 @@ public class OrderManagmentWindow extends JFrame implements ActionListener{
     }
     public void addOrderView(Order o)
     {
-       // JPanel orderPanel=new JPanel();
-       // orderPanel.setLayout(new GridLayout(2,1));
+        // JPanel orderPanel=new JPanel();
+        // orderPanel.setLayout(new GridLayout(2,1));
 
         JPanel generalInfo=new JPanel();
         JTextField customerField=new JTextField();
         customerField.setEditable(false);
         customerField.setText(o.getCustomer().getName()+ "  ");
-        generalInfo.setLayout(new GridLayout(1,2));
+        generalInfo.setLayout(new GridLayout(1,3));
         JTextField tableField=new JTextField();
         tableField.setEditable(false);
         tableField.setText( "  N" +o.getTable()+ "  ");
@@ -97,7 +90,7 @@ public class OrderManagmentWindow extends JFrame implements ActionListener{
         for(int i=0;i<orderItemList.size();i++)
         {
 
-            JPanel orderItem=new JPanel(new GridLayout(1,2));
+            JPanel orderItem=new JPanel(new GridLayout(1,3));
             String orderItemName= orderItemList.get(i).getMenuItem().getMenuitemName();
             JTextField menuItemField=new JTextField(orderItemName);
             menuItemField.setEditable(false);
@@ -111,7 +104,7 @@ public class OrderManagmentWindow extends JFrame implements ActionListener{
             orderItem.add(amountField);
             menuItemPanel.add(orderItem);
         }
-       // orderPanel.add(generalInfo);
+        // orderPanel.add(generalInfo);
         //orderPanel.add(menuItemPanel);
         JRadioButton jRadioButton=new JRadioButton("Approve");
         buttonOrderHashMap.put(jRadioButton,o);
@@ -126,7 +119,7 @@ public class OrderManagmentWindow extends JFrame implements ActionListener{
         String text="";
         if(orderCount!=orderList.size()) {
             for (int i = orderCount; i < orderList.size(); i++) {
-                if(orderList.get(i).approved==0) {
+                if(orderList.get(i).approved==1) {
                     addOrderView(orderList.get(i));
                 }
             }
@@ -137,35 +130,35 @@ public class OrderManagmentWindow extends JFrame implements ActionListener{
     }
 
     public static void main(String[] args) {
-     // EmployeeOrdersWindow omw=new EmployeeOrdersWindow();
+        // EmployeeOrdersWindow omw=new EmployeeOrdersWindow();
 
 
     }
-      public void approve()
-      {
-          TemporaryOrderDataBase tdb=new TemporaryOrderDataBase();
+    public void approve()
+    {
+        TemporaryOrderDataBase tdb=new TemporaryOrderDataBase();
 
-          Set<JRadioButton> radioButtons= buttonOrderHashMap.keySet();
-          Iterator<JRadioButton> iterator=radioButtons.iterator();
-          while(iterator.hasNext())
-          {
-              JRadioButton radioButton=iterator.next();
-              Order o=buttonOrderHashMap.get(radioButton);
-              if(radioButton.isSelected()) {
+        Set<JRadioButton> radioButtons= buttonOrderHashMap.keySet();
+        Iterator<JRadioButton> iterator=radioButtons.iterator();
+        while(iterator.hasNext())
+        {
+            JRadioButton radioButton=iterator.next();
+            Order o=buttonOrderHashMap.get(radioButton);
+            if(radioButton.isSelected()) {
 
-                  tdb.approve(o);
-                  orderCount--;
-              }
+                tdb.approve(buttonOrderHashMap.get(o));
+                orderCount--;
+            }
 
-          }
-      }
+        }
+    }
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
 
-       // addToTextView();
+        // addToTextView();
         if(actionEvent.getSource().equals(approveButton))
         {
-          approve();
+            approve();
         }
         else if(actionEvent.getSource().equals(refreshButton))
         {

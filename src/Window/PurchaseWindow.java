@@ -15,9 +15,7 @@ import java.awt.event.ItemListener;
 import java.util.*;
 
 
-/**
- * Created by sargis on 11/29/16.
- */
+
 public class PurchaseWindow extends Gui {
 
 

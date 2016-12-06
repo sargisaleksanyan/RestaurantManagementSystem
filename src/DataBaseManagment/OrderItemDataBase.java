@@ -7,9 +7,7 @@ import Order.OrderMenuItem;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- * Created by sargis on 12/4/16.
- */
+
 public class OrderItemDataBase extends EntityDataBase {
 
     public static final String ORDERITEM_TABLE="OrderItem";

@@ -5,9 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-/**
- * Created by sargis on 12/1/16.
- */
+
 public abstract class DataBase {
     protected Statement statement;
     protected Connection connection;

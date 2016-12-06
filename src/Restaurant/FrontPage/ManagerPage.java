@@ -15,7 +15,7 @@ import  DataBaseManagment.*;
 
 public class ManagerPage implements FrontPage {
 
-    private JButton menu ;
+  //  private JButton menu ;
     private JButton customer ;
     private JButton order;
     private JButton item;
@@ -29,7 +29,7 @@ public class ManagerPage implements FrontPage {
 
     @Override
     public void initlizeView(JPanel menuPanel) {
-        menu    =new JButton("Menu");
+     //   menu    =new JButton("Menu");
 
         customer=new JButton("Customers");
 
@@ -43,7 +43,7 @@ public class ManagerPage implements FrontPage {
 
 
         menuPanel.setLayout(new GridLayout(8,1));
-        menuPanel.add(menu);
+       // menuPanel.add(menu);
         menuPanel.add(menuItem);
         menuPanel.add(storage);
         menuPanel.add(customer);
@@ -55,7 +55,7 @@ public class ManagerPage implements FrontPage {
         menuItem.addActionListener(this);
         item.addActionListener(this);
         customer.addActionListener(this);
-        menu.addActionListener(this);
+    //    menu.addActionListener(this);
         order.addActionListener(this);
         employee.addActionListener(this);
         supplier.addActionListener(this);
@@ -69,11 +69,11 @@ public class ManagerPage implements FrontPage {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource().equals(menu))
+     /*   if(e.getSource().equals(menu))
         {
           //  MenuWindow m=new MenuWindow();
         }
-        else if(e.getSource().equals(customer))
+        else*/ if(e.getSource().equals(customer))
         {
             CustomerWindow c=new CustomerWindow (0.3,0.7);
         }
@@ -96,6 +96,10 @@ public class ManagerPage implements FrontPage {
         else if(e.getSource().equals(menuItem))
         {
             new MenuItemWindow(new MenuItemDataBase(),0.3,0.7);
+        }
+        else if(e.getSource().equals(employee))
+        {
+            new EmployeeWindow(new EmployeeDataBase(),0.3,0.7);
         }
     }
 

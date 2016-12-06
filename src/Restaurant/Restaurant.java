@@ -2,6 +2,7 @@ package Restaurant;
 
 import DataBaseManagment.*;
 import Restaurant.FrontPage.CustomerPage;
+import Restaurant.FrontPage.EmployeePage;
 import Restaurant.FrontPage.FrontPage;
 import Restaurant.FrontPage.ManagerPage;
 import Restaurant.SignInPage.CustomerSignIn;
@@ -114,6 +115,13 @@ public class Restaurant extends JFrame implements ActionListener {
 
 		  setSignIn();
 		  //validate();
+	  }
+	  else if(e.getSource()==employeeButton)
+	  {
+		  signInPage=new EmployeeSignIn(new EmployeeDataBase(),mainPage);
+
+		  frontPage=new EmployeePage();
+		  setSignIn();
 	  }
 	}
 }

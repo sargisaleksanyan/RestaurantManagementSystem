@@ -1,8 +1,6 @@
 package Meal_Menu.MenuItemBuilder;
 import Item.Item;
-/**
- * Created by sargis on 12/1/16.
- */
+
 public class MealBuilder {
 
     private  Meal meal;

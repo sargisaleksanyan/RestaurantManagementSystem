@@ -7,9 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- * Created by sargis on 11/29/16.
- */
+
 public abstract  class Gui extends JFrame implements ActionListener {
     protected int xCord;
     protected int yCord ;
@@ -49,7 +47,7 @@ public abstract  class Gui extends JFrame implements ActionListener {
         modifyButton=new JButton("Modify");
         first.add(addButton);
         first.add(removeButton);
-        first.add(modifyButton);
+       // first.add(modifyButton);
         subPanel.setBounds(xCord, 0, height, width);
         subPanel.setLayout(new BoxLayout( subPanel, BoxLayout.Y_AXIS));
         subPanel.add(first);

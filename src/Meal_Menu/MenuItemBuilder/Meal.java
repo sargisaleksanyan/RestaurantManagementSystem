@@ -6,9 +6,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 
-/**
- * Created by sargis on 11/30/16.
- */
+
 public class Meal extends MenuItem {
     private  String foodType;
     public String getFoodType() {

@@ -8,9 +8,7 @@ import Window.OrderWindow.OrderManagmentWindow;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- * Created by sargis on 11/29/16.
- */
+
 public class OrderDataBase extends EntityDataBase {
     public  final static String ORDER_TABLE="OrderT";
     public  final static String ORDER_ID="orderId";
@@ -38,6 +36,7 @@ public class OrderDataBase extends EntityDataBase {
 
     @Override
     public <T> boolean update(T... t) {
+
         return false;
     }
 

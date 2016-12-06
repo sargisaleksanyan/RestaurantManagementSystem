@@ -8,9 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * Created by sargis on 12/5/16.
- */
+
 public class TempDataList {
     protected Statement statement;
     protected Connection connection;
@@ -56,10 +54,15 @@ public class TempDataList {
                 int cusomer_id = resultSet.getInt(OrderDataBase.CUSTOMER_ID);
                 String orderDate = resultSet.getString(OrderDataBase.ORDER_DATE);
                 double bill = resultSet.getDouble(OrderDataBase.BILL);
+                int isapproved=resultSet.getInt(TemporaryOrderDataBase.ISAPPROVED);
+                int table=resultSet.getInt(TemporaryOrderDataBase.TABLE_NUMBER);
                 //  List<OrderMenuItem> orderMenuItems = getGivenOrderItems(order_id);
                 Order order = new Order();
+
                 order.setOrderDate(orderDate);
                 order.setOrderId(order_id);
+                order.setTable(table);
+                order.approved=isapproved;
                 order.setCustomer(customerDataBase.signIn(cusomer_id));
                 //   order.setOrderMenuItems(getGivenOrderItems(order_id));
                 orders.add(order);
@@ -76,8 +79,7 @@ public class TempDataList {
         }
 
         return orders;
-    }
-    public  synchronized List<OrderMenuItem> getGivenOrderItems(int order_id)
+    }    public  synchronized List<OrderMenuItem> getGivenOrderItems(int order_id)
     {
         ResultSet resultSet=null;
         MenuItemDataBase menuItemDataBase=new MenuItemDataBase();

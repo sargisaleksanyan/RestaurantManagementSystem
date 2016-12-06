@@ -6,9 +6,7 @@ import Supplier.Supplier;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- * Created by sargis on 11/29/16.
- */
+
 public class SupplierDataBase extends EntityDataBase {
 
      public static final String NAME="name";

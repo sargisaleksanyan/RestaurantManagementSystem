@@ -10,9 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
-/**
- * Created by sargis on 12/2/16.
- */
+
 public class DrinkView implements MenuItemListener {
     private JTextField  nameField;
     private JTextField  priceField;

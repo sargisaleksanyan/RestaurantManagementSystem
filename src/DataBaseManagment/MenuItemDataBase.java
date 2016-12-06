@@ -15,9 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 
-/**
- * Created by sargis on 11/29/16.
- */
+
 public class MenuItemDataBase extends EntityDataBase {
     public static final String MI_NAME="name";
     public static final String MI_PRICE="price";

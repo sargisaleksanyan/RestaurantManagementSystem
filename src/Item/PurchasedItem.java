@@ -2,9 +2,7 @@ package Item;
 
 import Restaurant.Entity;
 
-/**
- * Created by sargis on 11/28/16.
- */
+
 public class PurchasedItem implements Entity{
     private String purchaseDate;
     private int purchaseId;

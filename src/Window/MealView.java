@@ -14,9 +14,7 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.*;
 
-/**
- * Created by sargis on 12/2/16.
- */
+
 public class MealView implements MenuItemListener,ItemListener {
 
 

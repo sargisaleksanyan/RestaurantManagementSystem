@@ -7,9 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
-/**
- * Created by sargis on 11/29/16.
- */
+
 public class SupplierWindow extends Gui {
 
     private JTextField nameField;

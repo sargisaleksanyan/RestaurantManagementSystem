@@ -7,9 +7,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-/**
- * Created by sargis on 11/29/16.
- */
+
 public  abstract  class EntityDataBase extends DataBase{
 
     public abstract boolean insert(Entity e);

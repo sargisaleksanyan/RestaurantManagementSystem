@@ -5,9 +5,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-/**
- * Created by sargis on 12/4/16.
- */
+
 public class CurrentTime {
 
 

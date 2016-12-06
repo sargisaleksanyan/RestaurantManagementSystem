@@ -17,9 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 
 
-/**
- * Created by sargis on 11/28/16.
- */
+
 public class ItemsWindow extends Gui{
 
 

@@ -6,9 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
-/**
- * Created by sargis on 11/30/16.
- */
+
 public class EmployeeWindow extends  Gui{
     private JTextField nameField;
     private JTextField lastName;

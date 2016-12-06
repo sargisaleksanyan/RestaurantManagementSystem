@@ -8,9 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-/**
- * Created by sargis on 12/1/16.
- */
+
 public class Ingrediant implements ActionListener{
 
     public java.awt.List itemList;

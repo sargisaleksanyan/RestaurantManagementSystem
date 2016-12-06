@@ -2,9 +2,7 @@ package Employee;
 
 import Restaurant.Entity;
 
-/**
- * Created by sargis on 12/2/16.
- */
+
 public class Employee implements Entity{
     private int    idEmpoyee;
     private String name;

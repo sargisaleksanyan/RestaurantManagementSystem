@@ -5,9 +5,7 @@ import Restaurant.Entity;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- * Created by sargis on 11/29/16.
- */
+
 public class ItemDataBase extends EntityDataBase {
 
     public static final String ITEM_ID ="itemId";

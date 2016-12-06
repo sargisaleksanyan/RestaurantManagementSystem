@@ -2,9 +2,7 @@ package Order;
 
 import Meal_Menu.MenuItem;
 
-/**
- * Created by sargis on 12/4/16.
- */
+
 public class OrderMenuItem {
 
     private MenuItem menuItem;

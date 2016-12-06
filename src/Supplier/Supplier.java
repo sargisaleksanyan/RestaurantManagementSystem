@@ -2,9 +2,7 @@ package Supplier;
 
 import Restaurant.Entity;
 
-/**
- * Created by sargis on 11/28/16.
- */
+
 public class Supplier implements Entity {
     private int  supplierID;
     private String name;

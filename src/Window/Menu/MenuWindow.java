@@ -235,8 +235,8 @@ public class MenuWindow extends JFrame implements ActionListener{
         for(int i=0;i<drinks.size();i++)
         {
             if(drinks.get(i).isSelected()) {
-                MenuItem mi = menuItemButtonMap.get(dishs.get(i));
-                String amount = radioToText.get(dishs.get(i)).getText().toString();
+                MenuItem mi = menuItemButtonMap.get(drinks.get(i));
+                String amount = radioToText.get(drinks.get(i)).getText().toString();
                 int quntity = 1;
                 if (!amount.equals("")) {
                     quntity = Integer.parseInt(amount);
@@ -247,8 +247,8 @@ public class MenuWindow extends JFrame implements ActionListener{
         }
         for(int i=0;i<salads.size();i++) {
             if (salads.get(i).isSelected()) {
-                MenuItem mi = menuItemButtonMap.get(dishs.get(i));
-                String amount = radioToText.get(dishs.get(i)).getText().toString();
+                MenuItem mi = menuItemButtonMap.get(salads.get(i));
+                String amount = radioToText.get(salads.get(i)).getText().toString();
                 int quntity = 1;
                 if (!amount.equals("")) {
                     quntity = Integer.parseInt(amount);

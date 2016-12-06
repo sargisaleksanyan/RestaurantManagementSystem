@@ -5,9 +5,7 @@ import Restaurant.Entity;
 
 import java.sql.SQLException;
 
-/**
- * Created by sargis on 11/29/16.
- */
+
 public class PurchaseItemDataBase extends EntityDataBase {
 
     public static final String PURCHASE_ID ="purchaseItemId";

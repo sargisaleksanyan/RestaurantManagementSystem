@@ -13,9 +13,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * Created by sargis on 11/29/16.
- */
 public class DataList  {
     protected Statement statement;
     protected Connection connection;

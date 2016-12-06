@@ -6,9 +6,7 @@ import Restaurant.Entity;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- * Created by sargis on 12/5/16.
- */
+
 public class TemporaryOrderItemDataBase  extends EntityDataBase  {
     public static final String ORDERITEM_TABLE="TempOrderItem";
     public static final String ORDER_ID="orderId";

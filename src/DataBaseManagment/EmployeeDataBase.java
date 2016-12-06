@@ -6,9 +6,7 @@ import Restaurant.Entity;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- * Created by sargis on 11/29/16.
- */
+
 public class EmployeeDataBase extends EntityDataBase  implements SigninListener{
     public static final String EMPLOYEE_TABLE="Employee";
     public static final String LASTNAME="lastName";
